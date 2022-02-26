@@ -25,7 +25,7 @@ copyright = '2022, Chris Heyden'
 author = 'Chris Heyden'
 
 # The full version, including alpha/beta/rc tags
-release = '02/22/2022'
+release = '0.0.1'
 
 
 # -- General configuration ---------------------------------------------------

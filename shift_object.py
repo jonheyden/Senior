@@ -1,18 +1,7 @@
 import time
-#Header for the shiftregister class
 
-
-
-'''
-This class is used create a shift register object for our hardware.
-
-store:
-
-outputs: Either 8 or 16
-
-'''
 class shiftregister:
-       
+   
    def __init__(self, store, enable, shift, data, outputs) -> None:
       """__init__ initializes the shift register object.
 
@@ -27,8 +16,6 @@ class shiftregister:
       :param outputs: Number of outputs (8 or 16)
       :type outputs: Integer
       """      
-
-      
       self.store = store
       self.enable = enable
       self.shift = shift
