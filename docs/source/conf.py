@@ -16,7 +16,7 @@ import sys
 sys.path.insert(0, os.path.abspath('/Users/jonhe/Workspace/Senior'))
 
 #import pid_object
-import shift_object
+#import shift_object
 
 
 # -- Project information -----------------------------------------------------
