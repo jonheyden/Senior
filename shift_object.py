@@ -16,15 +16,19 @@ class shiftregister:
       :param outputs: Number of outputs (8 or 16)
       :type outputs: Integer
       """      
-      self.store = store
+      self.__store = store
       self.__enable = enable
-      self.shift = shift
+      self.__shift = shift
       self.__serial_out = serial_out
-      self.outputs = outputs
-      self.flag = 0
-      self.new_data = 0
+      self.__outputs = outputs
+      self.__flag = 0
+      self.__new_data = 0
       self.__current_data = 0
-   
+      #initialize pins to 0
+      self.__enable = 0
+      self.__shift = 0
+      self.__serial_out = 0
+      self.__store = 0
 
 
    def enable(self) -> None:
@@ -46,20 +50,20 @@ class shiftregister:
       :type data: Integer
       :returns: None
       """
-      for i in range(self.outputs):
+      for i in range(self.__outputs):
          self.__serial_out.value = data >> i & 1
          time.sleep(200e-9)
-         self.shift.value = True
+         self.__shift.value = True
          time.sleep(200e-9)
-         self.shift.value = False
+         self.__shift.value = False
       
    def __store_data(self) -> None:
       """__store_data Stores data from the shift register into the storage register.
       :returns: None
       """
-      self.store.value = True
+      self.__store.value = True
       time.sleep(200e-9)
-      self.store.value = False
+      self.__store.value = False
 
 
    def update(self, data) -> None:
@@ -70,12 +74,12 @@ class shiftregister:
       :returns: None
       """      
       if data != self.__current_data:
-         self.new_data = data
-         self.flag = 1
-      if self.flag == 1:
-         self.__shift_data(self.new_data)
+         self.__new_data = data
+         self.__flag = 1
+      if self.__flag == 1:
+         self.__shift_data(self.__new_data)
          self.__store_data()
-         self.__current_data = self.new_data
+         self.__current_data = self.__new_data
          self.__serial_out.value = False
-         self.flag = 0
+         self.__flag = 0
 
