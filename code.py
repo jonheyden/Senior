@@ -66,3 +66,54 @@ LTC_Interrupt = D37
 
 
 '''
+
+# Write your code here :-)
+# Write your code here :-)
+"""CircuitPython Essentials: PWM with Fixed Frequency example."""
+import time
+import board
+import pwmio
+import digitalio
+import shift_object
+# LED setup for most CircuitPython boards:
+#led = pwmio.PWMOut(board.LED, frequency=3411, duty_cycle=0)
+# LED setup for QT Py M0:
+# led = pwmio.PWMOut(board.SCK, frequency=5000, duty_cycle=0)
+
+
+
+
+
+
+input_store = digitalio.DigitalInOut(board.D14)
+input_store.direction = digitalio.Direction.OUTPUT
+
+input_enable = digitalio.DigitalInOut(board.D41)
+input_enable.direction = digitalio.Direction.OUTPUT
+
+input_shift = digitalio.DigitalInOut(board.D15)
+input_shift.direction = digitalio.Direction.OUTPUT
+
+input_data = digitalio.DigitalInOut(board.D40)
+input_data.direction = digitalio.Direction.OUTPUT
+
+
+input_shiftreg = shift_object.shiftregister(input_store, input_enable, input_shift, input_data, 8)
+
+input_shiftreg.enable()
+
+
+
+
+while True:
+   time.sleep(10)
+   input_shiftreg.update(0b11111111)
+   time.sleep(10)
+   input_shiftreg.update(0b00000000)
+   time.sleep(10)
+   input_shiftreg.update(0b01010101)
+   time.sleep(10)
+   input_shiftreg.update(0b00000000)
+   time.sleep(10)
+   input_shiftreg.update(0b10101010)
+

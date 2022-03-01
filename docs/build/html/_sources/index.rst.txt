@@ -9,7 +9,8 @@ Welcome to Loop Controller and Remote I/O's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+ .. include::  README.md
+      :parser: myst_parser.sphinx_
 
 Shift Register Class
 ---------------------
@@ -18,6 +19,8 @@ Shift Register Class
    :special-members: __init__
    :private-members:
    :undoc-members:
+
+
    
 
 Indices and tables

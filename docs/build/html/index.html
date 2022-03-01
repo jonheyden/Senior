@@ -74,10 +74,10 @@
 <span id="shift-register-class"></span><h2>Shift Register Class<a class="headerlink" href="#module-shift_object" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="shift_object.shiftregister">
-<em class="property">class </em><code class="sig-prename descclassname">shift_object.</code><code class="sig-name descname">shiftregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shift_object.shiftregister" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">shift_object.</code><code class="sig-name descname">shiftregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shift_object.shiftregister" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="shift_object.shiftregister.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>__init__ initializes the shift register object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -93,19 +93,53 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="shift_object.shiftregister._shiftregister__shift_data">
+<code class="sig-name descname">_shiftregister__shift_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__shift_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>__shift_data Private Method used to shift data into the shift register.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be shifted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shift_object.shiftregister._shiftregister__store_data">
+<code class="sig-name descname">_shiftregister__store_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__store_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>__store_data Stores data from the shift register into the storage register.
+:returns: None</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="shift_object.shiftregister.disable">
 <code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.disable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>disable Disables the OE pin.
+:returns: None</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="shift_object.shiftregister.enable">
 <code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.enable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>enable Enables the OE pin.
+:returns: None</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="shift_object.shiftregister.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>update Checks if data is new, sets a flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be checked and used to update the shift register</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
