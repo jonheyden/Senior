@@ -11,9 +11,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 #from importlib.machinery import SOURCE_SUFFIXES
-#import os
-#import sys
-#sys.path.insert(0, os.path.abspath('../../'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../'))
 
 #import pid_object
 import shift_object
