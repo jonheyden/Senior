@@ -10,13 +10,13 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-from importlib.machinery import SOURCE_SUFFIXES
-import os
-import sys
-sys.path.insert(0, os.path.abspath('../../'))
+#from importlib.machinery import SOURCE_SUFFIXES
+#import os
+#import sys
+#sys.path.insert(0, os.path.abspath('../../'))
 
 #import pid_object
-import shift_object
+#import shift_object
 
 
 # -- Project information -----------------------------------------------------
