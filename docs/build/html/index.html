@@ -15,7 +15,8 @@
         <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Shift Register" href="shift.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,15 +34,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Loop Controller and Remote I/O’s documentation!</a><ul>
-<li><a class="reference internal" href="#module-shift_object">Shift Register Class</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -69,80 +65,9 @@
   <div class="section" id="welcome-to-loop-controller-and-remote-i-o-s-documentation">
 <h1>Welcome to Loop Controller and Remote I/O’s documentation!<a class="headerlink" href="#welcome-to-loop-controller-and-remote-i-o-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-</div>
-<div class="section" id="module-shift_object">
-<span id="shift-register-class"></span><h2>Shift Register Class<a class="headerlink" href="#module-shift_object" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="shift_object.shiftregister">
-<em class="property">class </em><code class="sig-prename descclassname">shift_object.</code><code class="sig-name descname">shiftregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shift_object.shiftregister" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="shift_object.shiftregister.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>__init__ initializes the shift register object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>store</strong> (<em>DigitalInOut</em>) – Storage Register clock pin</p></li>
-<li><p><strong>enable</strong> (<em>DigitalInOut</em>) – OE pin</p></li>
-<li><p><strong>shift</strong> (<em>DigitalInOut</em>) – Shift Register clock pin</p></li>
-<li><p><strong>data</strong> (<em>DigitalInOut</em>) – Data Pin</p></li>
-<li><p><strong>outputs</strong> (<em>Integer</em>) – Number of outputs (8 or 16)</p></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister._shiftregister__shift_data">
-<code class="sig-name descname">_shiftregister__shift_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__shift_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>__shift_data Private Method used to shift data into the shift register.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be shifted</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister._shiftregister__store_data">
-<code class="sig-name descname">_shiftregister__store_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__store_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>__store_data Stores data from the shift register into the storage register.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.disable">
-<code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.disable" title="Permalink to this definition">¶</a></dt>
-<dd><p>disable Disables the OE pin.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.enable">
-<code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.enable" title="Permalink to this definition">¶</a></dt>
-<dd><p>enable Enables the OE pin.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>update Checks if data is new, sets a flag.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be checked and used to update the shift register</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -157,7 +82,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="shift.html" class="btn btn-neutral float-right" title="Shift Register" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

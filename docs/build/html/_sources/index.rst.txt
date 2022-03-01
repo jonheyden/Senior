@@ -8,17 +8,13 @@ Welcome to Loop Controller and Remote I/O's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
- .. include::  README.md
-      :parser: myst_parser.sphinx_
+   :glob:
+   
+   shift.rst
 
-Shift Register Class
----------------------
-.. automodule:: shift_object
-   :members:
-   :special-members: __init__
-   :private-members:
-   :undoc-members:
+
+
+
 
 
    

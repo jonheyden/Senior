@@ -1,0 +1,13 @@
+Shift Register
+==============
+
+.. autosummary::
+   :toctree: DIRNAME
+   
+
+.. automodule:: shift_object
+   :members:
+   :undoc-members:
+   :private-members:
+   :special-members: __init__
+
