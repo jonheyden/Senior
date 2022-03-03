@@ -90,7 +90,7 @@ class shiftregister:
       if self.__outputs == 8:
          self.update(0b00000000)
       else:
-         update(0b0000000000000000)
+         self.update(0b0000000000000000)
 
    def data(self) -> int:
       """data Returns the current data in the shift register.
