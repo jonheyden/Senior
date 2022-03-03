@@ -83,3 +83,19 @@ class shiftregister:
          self.__serial_out.value = False
          self.__flag = 0
 
+   def zero(self) -> None:
+      """zero Sets the shift register to 0.
+      :returns: None
+      """      
+      if self.__outputs = 8:
+         self.update(0b00000000)
+      else:
+         update(0b0000000000000000)
+
+   def data(self) -> int:
+      """data Returns the current data in the shift register.
+      :returns: Integer
+      """      
+      return self.__current_data
+
+   
