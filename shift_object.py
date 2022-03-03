@@ -87,7 +87,7 @@ class shiftregister:
       """zero Sets the shift register to 0.
       :returns: None
       """      
-      if self.__outputs = 8:
+      if self.__outputs == 8:
          self.update(0b00000000)
       else:
          update(0b0000000000000000)
