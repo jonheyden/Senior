@@ -10,6 +10,5 @@ Welcome to Loop Controller and Remote I/O's documentation!
 
    shift
    inputob
-   pidob
    outputob
-   
+   pidob   
