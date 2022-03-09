@@ -66,8 +66,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="output-conditioner">
-<h1>Output Conditioner<a class="headerlink" href="#output-conditioner" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-output_obj">
+<span id="output-conditioner"></span><h1>Output Conditioner<a class="headerlink" href="#module-output_obj" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="output_obj.output_container">
+<em class="property">class </em><code class="sig-prename descclassname">output_obj.</code><code class="sig-name descname">output_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#output_obj.output_container" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="output_obj.output_container.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#output_obj.output_container.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>__init__ Initializes output container object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> (<em>PWMIO.PWMOUT</em>) – The pin to output to</p></li>
+<li><p><strong>mode</strong> (<em>int</em>) – Value from 0-3</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="output_obj.output_container.update_mode">
+<code class="sig-name descname">update_mode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#output_obj.output_container.update_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>update_mode Updates mode of the controller</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – Value from 0-3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="output_obj.output_container.value">
+<code class="sig-name descname">value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#output_obj.output_container.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>value Updates values of the output pin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>float</em>) – Value from 0-100</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
