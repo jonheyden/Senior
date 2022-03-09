@@ -1,5 +1,5 @@
 Input Conditioner
-==============
+=================
 
 .. automodule:: input_obj
    :members:

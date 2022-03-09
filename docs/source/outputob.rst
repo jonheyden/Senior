@@ -1,5 +1,5 @@
 Output Conditioner
-==============
+==================
 
 .. automodule:: output_object
    :members:
