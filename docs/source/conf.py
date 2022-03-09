@@ -18,7 +18,7 @@ mock_modules = ['supervisor']
 for mod_name in mock_modules:
    sys.modules[mod_name] = mock.Mock()
 
-sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../../Teensy'))
 
 import pid_object
 import shift_object
