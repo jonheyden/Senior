@@ -1,4 +1,4 @@
-Shift Register
+Output Conditioner
 ==============
 
 .. automodule:: output_object

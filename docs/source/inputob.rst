@@ -1,4 +1,4 @@
-Shift Register
+Input Conditioner
 ==============
 
 .. automodule:: input_obj
