@@ -12,3 +12,4 @@ Welcome to Loop Controller and Remote I/O's documentation!
    inputob
    outputob
    pidob
+   README
