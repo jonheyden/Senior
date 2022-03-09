@@ -15,8 +15,10 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
 
-#import pid_object
+import pid_object
 import shift_object
+import output_obj
+import input_obj
 
 
 # -- Project information -----------------------------------------------------
