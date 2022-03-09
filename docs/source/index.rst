@@ -9,4 +9,5 @@ Welcome to Loop Controller and Remote I/O's documentation!
 .. toctree::
 
    shift
-
+   inputob
+   outputob
