@@ -52,8 +52,6 @@ exclude_patterns = []
 
 #SOURCE_SUFFIXES = ['.rst', '.md']
 
-autodoc_mock_imports = ["supervisor"]
-
 
 # -- Options for HTML output -------------------------------------------------
 
