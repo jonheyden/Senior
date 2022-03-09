@@ -7,8 +7,11 @@ Welcome to Loop Controller and Remote I/O's documentation!
 ==========================================================
 
 .. toctree::
+   :maxdepth: 2
+   :glob:
 
+   
    shift
+   pidob
    inputob
    outputob
-   pidob

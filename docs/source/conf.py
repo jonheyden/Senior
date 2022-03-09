@@ -13,7 +13,11 @@
 #from importlib.machinery import SOURCE_SUFFIXES
 import os
 import sys
-import supervisor
+import mock
+mock_modules = ['supervisor']
+for mod_name in mock_modules:
+   sys.modules[mod_name] = mock.Mock()
+
 sys.path.insert(0, os.path.abspath('../../'))
 
 import pid_object
