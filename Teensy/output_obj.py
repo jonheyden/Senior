@@ -49,5 +49,5 @@ class output_container:
             retvalue = self.__absolute_high - 1
          else:
             retvalue = 0
-      self.__output.value = int(retvalue)
+      self.__output.duty_cycle = int(retvalue)
 

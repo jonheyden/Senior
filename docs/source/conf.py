@@ -14,7 +14,7 @@
 import os
 import sys
 import mock
-mock_modules = ['supervisor']
+mock_modules = ['supervisor','board','pwmio','digitalio','busio','analogio']
 for mod_name in mock_modules:
    sys.modules[mod_name] = mock.Mock()
 

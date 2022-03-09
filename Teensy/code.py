@@ -65,58 +65,97 @@ LTC_Interrupt = D37
 
 
 
-'''
 
-# Write your code here :-)
-# Write your code here :-)
+
 """CircuitPython Essentials: PWM with Fixed Frequency example."""
 import time
 import board
 import pwmio
 import digitalio
 import shift_object
+#import input_obj
+import output_obj
+#import pid_object
 import config as c
 
 # LED setup for most CircuitPython boards:
 #led = pwmio.PWMOut(board.LED, frequency=3411, duty_cycle=0)
 # LED setup for QT Py M0:
 # led = pwmio.PWMOut(board.SCK, frequency=5000, duty_cycle=0)
+
+
 def init():
-
    """ Initializes objects from classes
-
-   """   
+   """
    global input_shiftreg
    input_shiftreg = shift_object.shiftregister(c.input_store, c.input_enable, c.input_shift, c.input_data, 8)
 
-   global output_shiftreg 
+   global output_shiftreg
    output_shiftreg = shift_object.shiftregister(c.output_store, c.output_enable, c.output_shift, c.output_data, 16)
 
-   global relay_shiftreg 
+   global relay_shiftreg
    relay_shiftreg = shift_object.shiftregister(c.relay_store, c.relay_enable, c.relay_shift, c.relay_data, 8)
 
    global digital_shiftreg
    digital_shiftreg = shift_object.shiftregister(c.digital_store, c.digital_enable, c.digital_shift, c.digital_data, 8)
 
+   global output0_obj
+   output0_obj = output_obj.output_container(c.output0,0)
+
    return
 
 
 def main():
-
+   print("before init")
    init()
+   print("after init")
+   output_shiftreg.enable()
+   b1 = 0
+   print("before whilec")
+   while (1):
+      time.sleep(10)
+      if b1 == 0:
+         output_shiftreg.update(0b00000001)
+         b1 = 1
+      output0_obj.value(50)
 
-   input_shiftreg.enable()
 
 
-   while True:
-      time.sleep(10)
-      input_shiftreg.update(0b11111111)
-      time.sleep(10)
-      input_shiftreg.update(0b00000000)
-      time.sleep(10)
-      input_shiftreg.update(0b01010101)
-      time.sleep(10)
-      input_shiftreg.update(0b00000000)
-      time.sleep(10)
-      input_shiftreg.update(0b10101010)
 
+
+poweron():
+initialize everything necessary
+
+
+PID object gets passed 
+
+loop():
+   check uart
+   if uart.read()
+      store into new_settings array
+      check if new_settings != current_settings
+      if so, update settings
+      store new_settings to current settings
+   spi update values (if necessary)
+   update PID values (function)
+      if settings for particular input are from input_obj or from LTC2984, check value in settings to determine what to pass to PID object
+
+   update outputs (may need to update output container to handle relays)
+
+
+
+while(1):
+   loop()
+
+
+
+
+'''
+import config
+import output_obj
+import time
+
+c_output0 = output_obj.output_container(config.output0, 2)
+
+while(1):
+    c_output0.value(0)
