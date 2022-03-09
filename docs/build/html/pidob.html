@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PID Object &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Output Conditioner" href="outputob.html" />
+    <link rel="prev" title="Input Conditioner" href="inputob.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Loop Controller and Remote I/O
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PID Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">The largest heading</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Loop Controller and Remote I/O</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>PID Object</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pidob.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-pid_object">
+<span id="pid-object"></span><h1>PID Object<a class="headerlink" href="#module-pid_object" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pid_object.PID_Object">
+<em class="property">class </em><code class="sig-prename descclassname">pid_object.</code><code class="sig-name descname">PID_Object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kp</span></em>, <em class="sig-param"><span class="n">ki</span></em>, <em class="sig-param"><span class="n">kd</span></em>, <em class="sig-param"><span class="n">min_output</span></em>, <em class="sig-param"><span class="n">max_output</span></em>, <em class="sig-param"><span class="n">min_input</span></em>, <em class="sig-param"><span class="n">max_input</span></em>, <em class="sig-param"><span class="n">sample_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pid_object.PID_Object._PID_Object__check_time">
+<code class="sig-name descname">_PID_Object__check_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object._PID_Object__check_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>__check_time Checks if the PID should be updated and updates local variable time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the PID should be updated, False if not</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object._PID_Object__error_update">
+<code class="sig-name descname">_PID_Object__error_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object._PID_Object__error_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>__error_update Updates the error and delta error</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>float</em>) – Input value to be checked against the setpoint</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kp</span></em>, <em class="sig-param"><span class="n">ki</span></em>, <em class="sig-param"><span class="n">kd</span></em>, <em class="sig-param"><span class="n">min_output</span></em>, <em class="sig-param"><span class="n">max_output</span></em>, <em class="sig-param"><span class="n">min_input</span></em>, <em class="sig-param"><span class="n">max_input</span></em>, <em class="sig-param"><span class="n">sample_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>__init__ Initializes the PID Object and starts disabled, in manual mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kp</strong> (<em>float</em>) – Proportional Gain</p></li>
+<li><p><strong>ki</strong> (<em>float</em>) – Integral Gain</p></li>
+<li><p><strong>kd</strong> (<em>float</em>) – Derivative Gain</p></li>
+<li><p><strong>min_output</strong> (<em>float</em>) – Boundary for the minimum value of the output, minimum is 0.0</p></li>
+<li><p><strong>max_output</strong> (<em>float</em>) – Boundary for the maximum value of the output, maximum is 1.0</p></li>
+<li><p><strong>min_input</strong> (<em>float</em>) – Boundary for the input, unbounded</p></li>
+<li><p><strong>max_input</strong> (<em>float</em>) – Boundary for the max input, unbounded</p></li>
+<li><p><strong>sample_time</strong> (<em>float</em>) – The time in milliseconds that the PID output should be updated</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>clear Sets all values to 0 upon initialization</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.disable">
+<code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>disable Dusable the PID Object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.enable">
+<code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable Enables the PID Object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.get_output">
+<code class="sig-name descname">get_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_output Returns the value of the output</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Value of the output being commanded from the PID</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_auto">
+<code class="sig-name descname">set_auto</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_auto" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_auto Setter for the auto mode</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_kd">
+<code class="sig-name descname">set_kd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_kd" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_kd Setter for the derivative gain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kd</strong> (<em>float</em>) – Derivative Gain</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_ki">
+<code class="sig-name descname">set_ki</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ki</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_ki" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_ki Setter for the integral gain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ki</strong> (<em>float</em>) – Integral Gain</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_kp">
+<code class="sig-name descname">set_kp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_kp" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_kp Setter for the proportional gain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kp</strong> (<em>float</em>) – Proportional Gain</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_manual">
+<code class="sig-name descname">set_manual</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_manual" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_manual Setter for the manual mode</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_output">
+<code class="sig-name descname">set_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_output Setter for the output if in manual mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>output</strong> (<em>_type_</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_sampletime">
+<code class="sig-name descname">set_sampletime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sampletime</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_sampletime" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_sampletime Setter for the Sample Time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sampletime</strong> (<em>float</em>) – Time in milliseconds that the PID output should be updated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.set_setpoint">
+<code class="sig-name descname">set_setpoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setpoint</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.set_setpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_setpoint Setter for the setpoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>setpoint</strong> (<em>float</em>) – Setpoint value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pid_object.PID_Object.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pid_object.PID_Object.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>update Updates the PID Output</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>float</em>) – The input value to be checked against the setpoint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The output value from 0-100</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="inputob.html" class="btn btn-neutral float-left" title="Input Conditioner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="outputob.html" class="btn btn-neutral float-right" title="Output Conditioner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Chris Heyden.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

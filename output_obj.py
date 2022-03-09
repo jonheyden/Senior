@@ -1,5 +1,4 @@
 
-
 class output_container:
    def __init__(self,output, mode) -> None:
       """__init__ Initializes output container object.
