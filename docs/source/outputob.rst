@@ -1,7 +1,7 @@
 Output Conditioner
 ==================
 
-.. automodule:: output_object
+.. automodule:: output_obj
    :members:
    :undoc-members:
    :private-members:
