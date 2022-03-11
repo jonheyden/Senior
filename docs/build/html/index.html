@@ -76,6 +76,35 @@
 </ul>
 </div>
 </div>
+<div class="section" id="general-flow-of-the-program-on-the-teensy">
+<h1>General Flow of the Program on the Teensy<a class="headerlink" href="#general-flow-of-the-program-on-the-teensy" title="Permalink to this headline">¶</a></h1>
+<p>Input Container -&gt; PID Object -&gt; Output Container</p>
+<div class="section" id="jobs-of-the-classes">
+<h2>Jobs of the classes<a class="headerlink" href="#jobs-of-the-classes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="input-container">
+<h3>Input Container<a class="headerlink" href="#input-container" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Converts the raw input from the inputs (0-65535) to a value in engineering units.</p></li>
+</ul>
+</div>
+<div class="section" id="pid-object">
+<h3>PID Object<a class="headerlink" href="#pid-object" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Takes the engineering unit value from the input container and returns a value from 0-100 which is the value of the output in terms of percent.</p></li>
+</ul>
+</div>
+<div class="section" id="output-container">
+<h3>Output Container<a class="headerlink" href="#output-container" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sets the mode of the output pin (4-20mA, 0-10VDC, 0-5VDC).</p></li>
+<li><p>Takes the value from 0-100 and ouputs the value to the outputs (0-65535) with regard to the mode it is in.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="general-flow-of-the-program-on-the-onion-omega">
+<h1>General Flow of the Program on the Onion Omega<a class="headerlink" href="#general-flow-of-the-program-on-the-onion-omega" title="Permalink to this headline">¶</a></h1>
+</div>
 
 
            </div>
