@@ -1,6 +1,13 @@
 """ This File is used to initialize the hardware. 
    --------------------------------------------------
 
+
+from shift_object import shiftregister
+
+test = shift_object.shiftregister(config.digital_store, config.digital_enable, config.digital_shift, config.digital_data, 8)
+
+
+
 """
 
 import board
