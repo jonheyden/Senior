@@ -6,7 +6,7 @@ from shift_object import shiftregister
 
 test = shift_object.shiftregister(config.digital_store, config.digital_enable, config.digital_shift, config.digital_data, 8)
 
-
+test = shift_object.shiftregister(config.relay_store, config.relay_enable, config.relay_shift, config.relay_data, 8)
 
 """
 
@@ -76,20 +76,28 @@ input_enable.direction = digitalio.Direction.OUTPUT
 input_shift.direction = digitalio.Direction.OUTPUT
 input_data.direction = digitalio.Direction.OUTPUT
 
+input_enable.value = True
+
 output_store.direction = digitalio.Direction.OUTPUT
 output_enable.direction = digitalio.Direction.OUTPUT
 output_shift.direction = digitalio.Direction.OUTPUT
 output_data.direction = digitalio.Direction.OUTPUT
+
+output_enable.value = True
 
 relay_store.direction = digitalio.Direction.OUTPUT
 relay_enable.direction = digitalio.Direction.OUTPUT
 relay_shift.direction = digitalio.Direction.OUTPUT
 relay_data.direction = digitalio.Direction.OUTPUT
 
+relay_enable.value = True
+
 digital_store.direction = digitalio.Direction.OUTPUT
 digital_enable.direction = digitalio.Direction.OUTPUT
 digital_shift.direction = digitalio.Direction.OUTPUT
 digital_data.direction = digitalio.Direction.OUTPUT
+
+digital_enable.value = True
 
 #Input Shift Register Configuration Constants
 '''

@@ -25,7 +25,7 @@ class shiftregister:
       self.__new_data = 0
       self.__current_data = 0
       #initialize pins to 0
-      self.__enable.value = False
+      self.__enable.value = True
       self.__shift.value = False
       self.__serial_out.value = False
       self.__store.value = False
@@ -35,15 +35,15 @@ class shiftregister:
       """enable Enables the OE pin.
       :returns: None
       """
-      if self.__enable.value == False:
-         self.__enable.value = True
+      if self.__enable.value == True:
+         self.__enable.value = False
 
    def disable(self) -> None:
       """disable Disables the OE pin.
       :returns: None
       """      
-      if self.__enable.value == True:
-         self.__enable.value = False
+      if self.__enable.value == False:
+         self.__enable.value = True
       
    def __shift_data(self, data) -> None: 
       """__shift_data Private Method used to shift data into the shift register.
@@ -53,7 +53,8 @@ class shiftregister:
       :returns: None
       """
       for i in range(self.__outputs):
-         self.__serial_out.value = bool((data >> i) & 1)
+         self.__serial_out.value = bool((data >> (self.__outputs - 1 - i)) & 1)
+         print(self.__serial_out.value)
          time.sleep(200e-9)
          self.__shift.value = True
          time.sleep(200e-9)
