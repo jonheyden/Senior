@@ -111,7 +111,7 @@ def main():
    print("after init")
    output_shiftreg.enable()
    b1 = 0
-   print("before whilec")
+   print("before while")
    while (1):
       time.sleep(10)
       if b1 == 0:
@@ -157,8 +157,5 @@ import time
 
 c_output0 = output_obj.output_container(config.output0, 2)
 
-
-'''
 while(1):
     c_output0.value(0)
-'''

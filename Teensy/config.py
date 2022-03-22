@@ -8,6 +8,24 @@ test = shift_object.shiftregister(config.digital_store, config.digital_enable, c
 
 test = shift_object.shiftregister(config.relay_store, config.relay_enable, config.relay_shift, config.relay_data, 8)
 
+
+chan20 = (0x1c << 27) | (0x1 << 26) | (0x1 << 25) | (0x0 << 24) | (0x1 << 22) | (0x100c49 << 0)
+
+st_add = (0x0200) + 4 * (20-1)
+
+st_addh = (st_add >> 8) & 0xff
+st_addl = st_add & 0xff
+
+d1 = (chan20 >> 24) & 0xff
+d2 = (chan20 >> 16) & 0xff
+d3 = (chan20 >> 8) & 0xff
+d4 = (chan20 >> 0) & 0xff
+
+
+transdata = [d4,d3,d2,d1,st_addl,st_addh,2]
+transdata = bytearray(transdata)
+
+
 """
 
 import board
@@ -63,11 +81,15 @@ digital_shift = digitalio.DigitalInOut(board.D33)
 digital_data = digitalio.DigitalInOut(board.D36)
 
 #Onion RX/TX
-onionuart = busio.UART(board.TX1, board.RX1, baudrate=9600)
+onionuart = busio.UART(board.TX1, board.RX1, baudrate=500000)
 
 #LTCSPI
 ltc_cs = digitalio.DigitalInOut(board.D10)
-ltc_cs = digitalio.Direction.OUTPUT
+ltc_cs.direction = digitalio.Direction.OUTPUT
+ltc_cs.value = True
+ltc_interrupt = digitalio.DigitalInOut(board.D37)
+ltc_interrupt.direction = digitalio.Direction.INPUT
+#ltc_interrupt.pull = digitalio.Pull.DOWN
 ltcspi = busio.SPI(board.SCK, board.MOSI, board.MISO)
 
 #digitalio direction declarations

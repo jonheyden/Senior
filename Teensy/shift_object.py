@@ -24,7 +24,7 @@ class shiftregister:
       self.__flag = 0
       self.__new_data = 0
       self.__current_data = 0
-      #initialize pins to 0
+      #initialize pins to False
       self.__enable.value = True
       self.__shift.value = False
       self.__serial_out.value = False
@@ -54,7 +54,7 @@ class shiftregister:
       """
       for i in range(self.__outputs):
          self.__serial_out.value = bool((data >> (self.__outputs - 1 - i)) & 1)
-         print(self.__serial_out.value)
+         #print(self.__serial_out.value)
          time.sleep(200e-9)
          self.__shift.value = True
          time.sleep(200e-9)
