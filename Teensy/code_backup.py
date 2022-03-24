@@ -147,6 +147,17 @@ loop():
 while(1):
    loop()
 
+import config
+import ltc2984
+import time
+ltcob = ltc2984.ltc2984(config.ltcspi, config.ltc_cs, config.ltc_interrupt)
+chan20 = (0x1c << 27) | (0x1 << 26) | (0x1 << 25) | (0x0 << 24) | (0x1 << 22) | (0x100c49 << 0)
+ltcob.chan_assignment(20,chan20)
+time.sleep(.1)
+ltcob.chan_conv(20)
+time.sleep(.5)
+x = ltcob.read_data(20)
+print(float(x)/1024)
 
 
 

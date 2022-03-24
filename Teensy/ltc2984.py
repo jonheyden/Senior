@@ -106,7 +106,17 @@ class ltc2984:
          return
       self.__spi.unlock()
 
+   def check_interrupt(self) -> bool:
+      """check_interrupt Checks if interrupt high or low
+
+      :return: True if interrupt not busy, False if interrupt busy
+      :rtype: bool
+      """      
+      return self.__interrupt.value
+
    def check_conv(self):
+      """check_conv Checks if conversion is complete
+      """      
       process_finished = 0
       return_data = bytearray(4)
       datatowrite = bytearray(4)
@@ -123,27 +133,34 @@ class ltc2984:
       datatowrite[0] = self.__read
       datatowrite[1] = address_high
       datatowrite[2] = address_low
-      datatowrite[3] = 0x00      
+      datatowrite[3] = 0x00
 
-      while (process_finished == 0):
+      counttoescape = 0
+      while (process_finished == 0 and counttoescape < 10):
          time.sleep(0.1)
          owned = self.__spi.try_lock()
-         while owned:
+         if owned:
             self.__spi.configure(baudrate=1000000, phase=0, polarity=0)
             self.__cs.value = False
             self.__spi.write_readinto(datatowrite, return_data)
             self.__cs.value = True
-            process_finished = return_data[0] & 0x40
-            print(process_finished)
-      
-         self.__spi.unlock()
+            process_finished = return_data[3] & 0x40
+            if (process_finished == 0x40):
+               self.__spi.unlock()
+               return
+         else:
+            print("SPI Not Locked")
+            self.__spi.unlock()
+            return
 
-   def read_data(self, channel) -> None:
-      """read_data reads the data from the channel
+   def read_data(self, channel) -> float:
+      """read_data Reads data from the requested ram location
 
-      :param channel: channel to be read
-      :type channel: int
-      """      
+      :param channel: Channel to be checked
+      :type channel: int (0-20)
+      :return: Data from requested ram location
+      :rtype: float
+      """
 
       address = 0x0010 + (channel-1)*4
       address_high = (address >> 8) & 0xFF
@@ -188,6 +205,22 @@ class ltc2984:
 
       
       return return_data & 0xFFFFFF
+
+   def convert_and_read(self, channel) -> float:
+      """convert_and_read Performs a channel conversion and reads the data
+
+      :param channel: Channel to be checked
+      :type channel: int (0-20)
+      :return: Data from requested ram location
+      :rtype: float
+      """
+      self.chan_conv(channel)
+      while(not self.check_interrupt()):
+         time.sleep(0.1)
+
+      temp = ((self.read_data(channel)/1024)*(9/5))+32
+      return temp
+
 
 
 

@@ -105,6 +105,27 @@ def init():
    return
 
 
+
+import config as c
+import shift_object
+import output_obj
+import input_obj
+output_shiftreg = shift_object.shiftregister(c.output_store, c.output_enable, c.output_shift, c.output_data, 16)
+output_shiftreg.enable()
+
+input_shiftreg = shift_object.shiftregister(c.input_store, c.input_enable, c.input_shift, c.input_data, 8)
+input_shiftreg.enable()
+input_shiftreg.update(c.input_currentMode[0])
+
+in0 = input_obj.input_container(c.input0,0,0,20,4,1)
+in0.value()
+
+output_shiftreg.update(c.output_vccMode[0])
+out0 = output_obj.output_container(c.output0,2)
+out0.value(50)
+
+
+
 def main():
    print("before init")
    init()
