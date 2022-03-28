@@ -26,6 +26,7 @@ General Flow of the Program on the Teensy
 Input Container -> PID Object -> Output Container
 
 .. image:: images/sptest.JPG
+   :width: 500
    :scale: 50%
    :alt: Teensy Flow
 
