@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LTC2984 &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Uart Object" href="uart.html" />
+    <link rel="prev" title="Output Conditioner" href="outputob.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Loop Controller and Remote I/O
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LTC2984</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Loop Controller and Remote I/O</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>LTC2984</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ltc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-ltc2984">
+<span id="ltc2984"></span><h1>LTC2984<a class="headerlink" href="#module-ltc2984" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ltc2984.ltc2984">
+<em class="property">class </em><code class="sig-prename descclassname">ltc2984.</code><code class="sig-name descname">ltc2984</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spi_ob</span></em>, <em class="sig-param"><span class="n">cs</span></em>, <em class="sig-param"><span class="n">interrupt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ltc2984.ltc2984" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="ltc2984.ltc2984.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spi_ob</span></em>, <em class="sig-param"><span class="n">cs</span></em>, <em class="sig-param"><span class="n">interrupt</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#ltc2984.ltc2984.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>__init__ initalizes the ltc2984 object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spi_ob</strong> (<em>busio.SPI</em>) – spi object</p></li>
+<li><p><strong>cs</strong> (<em>digitalio.DigitalInOut</em>) – digital pin for CS</p></li>
+<li><p><strong>interrupt</strong> (<em>digitalio.DigitalInOut</em>) – digital pin for interrupt</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.chan_assignment">
+<code class="sig-name descname">chan_assignment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#ltc2984.ltc2984.chan_assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>chan_assignment assigns channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<em>int</em>) – Channel number from 1-20</p></li>
+<li><p><strong>data</strong> (<em>long</em>) – 32 bit data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.chan_conv">
+<code class="sig-name descname">chan_conv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#ltc2984.ltc2984.chan_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>chan_conv requests a channel conversion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>int</em>) – channel to be converted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.check_conv">
+<code class="sig-name descname">check_conv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ltc2984.ltc2984.check_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>check_conv Checks if conversion is complete</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.check_interrupt">
+<code class="sig-name descname">check_interrupt</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#ltc2984.ltc2984.check_interrupt" title="Permalink to this definition">¶</a></dt>
+<dd><p>check_interrupt Checks if interrupt high or low</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if interrupt not busy, False if interrupt busy</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.convert_and_read">
+<code class="sig-name descname">convert_and_read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#ltc2984.ltc2984.convert_and_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert_and_read Performs a channel conversion and reads the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>int</em><em> (</em><em>0-20</em><em>)</em>) – Channel to be checked</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data from requested ram location</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ltc2984.ltc2984.read_data">
+<code class="sig-name descname">read_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#ltc2984.ltc2984.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>read_data Reads data from the requested ram location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>int</em><em> (</em><em>0-20</em><em>)</em>) – Channel to be checked</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data from requested ram location</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="outputob.html" class="btn btn-neutral float-left" title="Output Conditioner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="uart.html" class="btn btn-neutral float-right" title="Uart Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Chris Heyden.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
