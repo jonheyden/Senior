@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Circuit &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Output Circuit" href="outputcircuit.html" />
+    <link rel="prev" title="Uart Object" href="uart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Loop Controller and Remote I/O
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Circuit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#voltage-sensing-mode">Voltage Sensing Mode:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-sensing-mode">Current Sensing Mode:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instrumentation-amplifier">Instrumentation Amplifier:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voltage-divider">Voltage Divider:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="outputcircuit.html">Output Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relaycircuit.html">Relay and Digital Out Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ltc2984circuit.html">LTC2984 Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powercircuit.html">Power Circuit</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Loop Controller and Remote I/O</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Input Circuit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/inputcircuit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="input-circuit">
+<h1>Input Circuit<a class="headerlink" href="#input-circuit" title="Permalink to this headline">¶</a></h1>
+<p>Below is the input circuit capable of 4-20mA, 0-10, 0-5, and 24VDC.</p>
+<div class="section" id="voltage-sensing-mode">
+<h2>Voltage Sensing Mode:<a class="headerlink" href="#voltage-sensing-mode" title="Permalink to this headline">¶</a></h2>
+<p>For 0-10, 0-5, and 24VDC the Current_Mode_SSR1 is off.
+In this configuration, current will travel through the 100kOhm resistor. The voltage will be sensed at U4A.
+At U4B, because of the pulldown 100kOhm resistor, the voltage will be 0V or very close to this.
+The configuration for the amplifiers is essentially an instrumentation amplifier.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">These</span> <span class="n">amplifiers</span> <span class="n">are</span> <span class="n">capable</span> <span class="n">of</span> <span class="n">ground</span> <span class="n">sensing</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">paramount</span>
+<span class="k">if</span> <span class="n">only</span> <span class="n">connected</span> <span class="n">to</span> <span class="mi">24</span><span class="n">VDC</span> <span class="ow">and</span> <span class="mi">0</span><span class="n">V</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="current-sensing-mode">
+<h2>Current Sensing Mode:<a class="headerlink" href="#current-sensing-mode" title="Permalink to this headline">¶</a></h2>
+<p>For 4-20mA, the Current_Mode_SSR1 is on.
+In this configuration, current will travel through the Current_Mode_SSR1. The voltage will be sensed at U4A and differentiated with the voltage at U4B.
+Because the current is bounded, the differences at 20mA will be ~10VDC due to Ohms Law. (.2*499)
+At 4mA, the voltage difference will be ~2VDC.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">499</span> <span class="n">Ohms</span> <span class="n">was</span> <span class="n">selected</span> <span class="n">because</span> <span class="n">of</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">resistance</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">SSR</span> <span class="ow">and</span> <span class="n">possible</span> <span class="n">offsets</span><span class="o">.</span> <span class="n">The</span> <span class="n">ideal</span> <span class="n">value</span> <span class="ow">is</span> <span class="mi">500</span> <span class="n">Ohms</span> <span class="kn">from</span> <span class="nn">U4A</span> <span class="n">to</span> <span class="n">U4B</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instrumentation-amplifier">
+<h2>Instrumentation Amplifier:<a class="headerlink" href="#instrumentation-amplifier" title="Permalink to this headline">¶</a></h2>
+<p>The measured voltages go through buffers that then feed into the difference amplifier. Because of the configuration, there is a natural offset from feedback that comes from U4B. These offsets can be calibrated by the user to increase accuracy.</p>
+</div>
+<div class="section" id="voltage-divider">
+<h2>Voltage Divider:<a class="headerlink" href="#voltage-divider" title="Permalink to this headline">¶</a></h2>
+<p>Once the calculation has been made, the voltage is then divided by 3 through the voltage divider circuit. This is then pushed into the last buffer that then goes to the input pin of the Teensy 4.1.</p>
+<a class="reference internal image-reference" href="_images/input_cir.jpg"><img alt="Input Circuit" class="align-center" src="_images/input_cir.jpg" style="width: 500px;" /></a>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uart.html" class="btn btn-neutral float-left" title="Uart Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="outputcircuit.html" class="btn btn-neutral float-right" title="Output Circuit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Chris Heyden.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

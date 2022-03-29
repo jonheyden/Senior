@@ -17,9 +17,22 @@ Welcome to Loop Controller and Remote I/O's documentation!
    outputob
    ltc
    uart
-   schematics
 
 
+
+Schematics
+===========
+
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   inputcircuit
+   outputcircuit
+   relaycircuit
+   ltc2984circuit
+   powercircuit
 
 General Flow of the Program on the Teensy
 =========================================
