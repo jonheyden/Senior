@@ -6,8 +6,13 @@
 Welcome to Loop Controller and Remote I/O's documentation!
 ==========================================================
 
+
+
+
+Code
+====
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    
@@ -25,7 +30,7 @@ Schematics
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    inputcircuit

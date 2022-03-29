@@ -89,11 +89,11 @@
 <p>For 0-10, 0-5, and 24VDC the Current_Mode_SSR1 is off.
 In this configuration, current will travel through the 100kOhm resistor. The voltage will be sensed at U4A.
 At U4B, because of the pulldown 100kOhm resistor, the voltage will be 0V or very close to this.
-The configuration for the amplifiers is essentially an instrumentation amplifier.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">These</span> <span class="n">amplifiers</span> <span class="n">are</span> <span class="n">capable</span> <span class="n">of</span> <span class="n">ground</span> <span class="n">sensing</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">paramount</span>
-<span class="k">if</span> <span class="n">only</span> <span class="n">connected</span> <span class="n">to</span> <span class="mi">24</span><span class="n">VDC</span> <span class="ow">and</span> <span class="mi">0</span><span class="n">V</span><span class="o">.</span>
-</pre></div>
+The configuration for the amplifiers is essentially an instrumentation amplifier.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These amplifiers are capable of ground sensing which is paramount
+if only connected to 24VDC and 0V.</p>
 </div>
 </div>
 <div class="section" id="current-sensing-mode">
@@ -101,11 +101,11 @@ The configuration for the amplifiers is essentially an instrumentation amplifier
 <p>For 4-20mA, the Current_Mode_SSR1 is on.
 In this configuration, current will travel through the Current_Mode_SSR1. The voltage will be sensed at U4A and differentiated with the voltage at U4B.
 Because the current is bounded, the differences at 20mA will be ~10VDC due to Ohms Law. (.2*499)
-At 4mA, the voltage difference will be ~2VDC.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">499</span> <span class="n">Ohms</span> <span class="n">was</span> <span class="n">selected</span> <span class="n">because</span> <span class="n">of</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">resistance</span> <span class="n">of</span>
-<span class="n">the</span> <span class="n">SSR</span> <span class="ow">and</span> <span class="n">possible</span> <span class="n">offsets</span><span class="o">.</span> <span class="n">The</span> <span class="n">ideal</span> <span class="n">value</span> <span class="ow">is</span> <span class="mi">500</span> <span class="n">Ohms</span> <span class="kn">from</span> <span class="nn">U4A</span> <span class="n">to</span> <span class="n">U4B</span><span class="o">.</span>
-</pre></div>
+At 4mA, the voltage difference will be ~2VDC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>499 Ohms was selected because of the internal resistance of
+the SSR and possible offsets. The ideal value is 500 Ohms from U4A to U4B.</p>
 </div>
 </div>
 <div class="section" id="instrumentation-amplifier">
