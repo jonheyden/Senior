@@ -17,6 +17,7 @@ Welcome to Loop Controller and Remote I/O's documentation!
    outputob
    ltc
    uart
+   schematics
 
 
 
@@ -24,11 +25,6 @@ General Flow of the Program on the Teensy
 =========================================
 
 Input Container -> PID Object -> Output Container
-
-.. image:: images/input_circuit.pdf
-   :width: 500
-   :scale: 50%
-   :alt: Teensy Flow
 
 
 Jobs of the classes
