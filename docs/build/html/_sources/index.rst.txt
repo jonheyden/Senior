@@ -17,12 +17,7 @@ Code
    :caption: Code
 
    
-   shift
-   pidob
-   inputob
-   outputob
-   ltc
-   uart
+   codeob/*
 
 
 
@@ -35,11 +30,7 @@ Schematics
    :glob:
    :caption: Schematics
 
-   inputcircuit
-   outputcircuit
-   relaycircuit
-   ltc2984circuit
-   powercircuit
+   schematics/*
 
 General Flow of the Program on the Teensy
 =========================================
