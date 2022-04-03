@@ -13,6 +13,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,7 +36,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption"><span class="caption-text">Code</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
@@ -43,6 +45,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Schematics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="inputcircuit.html">Input Circuit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="outputcircuit.html">Output Circuit</a></li>
@@ -88,10 +91,22 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>output</strong> (<em>PWMIO.PWMOUT</em>) – The pin to output to</p></li>
-<li><p><strong>mode</strong> (<em>int</em>) – Value from 0-3</p></li>
+<li><p><strong>mode</strong> (<em>int</em>) – Value from 0-2</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="output_obj.output_container.disable">
+<code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#output_obj.output_container.disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>disable Disables the output pin</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="output_obj.output_container.enable">
+<code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#output_obj.output_container.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable Enables the output pin</p>
 </dd></dl>
 
 <dl class="py method">
@@ -100,7 +115,7 @@
 <dd><p>update_mode Updates mode of the controller</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – Value from 0-3</p>
+<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – Value from 0-2</p>
 </dd>
 </dl>
 </dd></dl>

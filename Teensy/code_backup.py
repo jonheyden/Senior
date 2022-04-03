@@ -166,7 +166,7 @@ import config
 import output_obj
 import time
 
-c_output0 = output_obj.output_container(config.output0, 2)
+c_output0 = output_obj.output_container(config.output0, 0)
 
 while(1):
     c_output0.value(0)

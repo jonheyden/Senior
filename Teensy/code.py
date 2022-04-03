@@ -120,10 +120,14 @@ input_shiftreg.update(c.input_currentMode[0])
 in0 = input_obj.input_container(c.input0,0,0,20,4,1)
 in0.value()
 
-output_shiftreg.update(c.output_vccMode[0])
-out0 = output_obj.output_container(c.output0,2)
-out0.value(50)
+output_shiftreg.update(c.output_currentMode[0])
+out1 = output_obj.output_container(c.output1,0)
+out1.value(50)
 
+
+digital_shiftreg = shift_object.shiftregister(c.digital_store, c.digital_enable, c.digital_shift, c.digital_data, 8)
+
+relay_shiftreg = shift_object.shiftregister(c.relay_store, c.relay_enable, c.relay_shift, c.relay_data, 8)
 
 
 def main():

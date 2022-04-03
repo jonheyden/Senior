@@ -1,6 +1,6 @@
 """ This File is used to initialize the hardware. 
    --------------------------------------------------
-
+cat temp.txt | mosquitto_pub -t potentiometerPosition -l &
 
 from shift_object import shiftregister
 
@@ -10,6 +10,8 @@ test = shift_object.shiftregister(config.relay_store, config.relay_enable, confi
 
 
 chan20 = (0x1c << 27) | (0x1 << 26) | (0x1 << 25) | (0x0 << 24) | (0x1 << 22) | (0x100c49 << 0)
+
+chan1 = (0x2 << 27) | (0x14 << 22) | (0x1 << 21) | (0x0 << 21) | (0x0 << 18)
 
 st_add = (0x0200) + 4 * (20-1)
 
@@ -81,7 +83,7 @@ digital_shift = digitalio.DigitalInOut(board.D33)
 digital_data = digitalio.DigitalInOut(board.D36)
 
 #Onion RX/TX
-onionuart = busio.UART(board.TX1, board.RX1, baudrate=500000)
+onionuart = busio.UART(board.TX1, board.RX1, baudrate=115200)
 
 #LTCSPI
 ltc_cs = digitalio.DigitalInOut(board.D10)

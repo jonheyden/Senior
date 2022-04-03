@@ -13,6 +13,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,7 +36,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption"><span class="caption-text">Code</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
@@ -43,10 +45,17 @@
 <li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Schematics</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="inputcircuit.html">Input Circuit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="outputcircuit.html">Output Circuit</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Relay and Digital Out Circuits</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Relay and Digital Out Circuits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#role-of-the-shift-register">Role of the Shift Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relay-circuits">Relay Circuits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#digital-output-circuit">Digital Output Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parts">Parts</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ltc2984circuit.html">LTC2984 Circuit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="powercircuit.html">Power Circuit</a></li>
 </ul>
@@ -77,7 +86,25 @@
              
   <div class="section" id="relay-and-digital-out-circuits">
 <h1>Relay and Digital Out Circuits<a class="headerlink" href="#relay-and-digital-out-circuits" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="role-of-the-shift-register">
+<h2>Role of the Shift Register<a class="headerlink" href="#role-of-the-shift-register" title="Permalink to this headline">¶</a></h2>
+<p>For both the relay and digital output circuits, a CD74HC595 is used to expand the outputs from the Teensy 4.1.</p>
+<p>The shift registers allow the user to take 4 output pins and turn them into 8 at the cost of time required to shift.</p>
+<p>These shift registers were seperated but if the microcontroller is short on outputs, the QH’ from one could be fed into the SER of the other. Further, the OE, SRCLK, and CLK can be tied which would reduce the required number of pins from 8 to 4. This means that 4 output pins would effectively become 16, again at the cost of the time it takes to shift through the two registers.</p>
+</div>
+<div class="section" id="relay-circuits">
+<h2>Relay Circuits<a class="headerlink" href="#relay-circuits" title="Permalink to this headline">¶</a></h2>
+<p>The relay circuits simply allow for a signal to be sent into one end and output through to act as a dry contact relay. They have a 700mA rating, but should be derated to 500mA for precaution and efficiency.</p>
+</div>
+<div class="section" id="digital-output-circuit">
+<h2>Digital Output Circuit<a class="headerlink" href="#digital-output-circuit" title="Permalink to this headline">¶</a></h2>
+<p>The Digital Outputs drain is connected to the 24VDC potential supplied to the board. When the OptoMos is turned on, it allows 24VDC to pass and supply voltage. Again, these have a 700mA rating but should be derated to 500mA for precaution and efficiency.</p>
+</div>
+<div class="section" id="parts">
+<h2>Parts<a class="headerlink" href="#parts" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download internal" download="" href="_downloads/953e55fe4fb08978b857f2d61ceb7538/CD74.pdf"><code class="xref download docutils literal notranslate"><span class="pre">CD74HC595</span></code></a></p>
 <a class="reference internal image-reference" href="_images/relay_dig_cir.jpg"><img alt="Relay and Ditigal Out Circuit" class="align-center" src="_images/relay_dig_cir.jpg" style="width: 500px;" /></a>
+</div>
 </div>
 
 

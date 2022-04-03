@@ -14,6 +14,7 @@ Code
 .. toctree::
    :maxdepth: 1
    :glob:
+   :caption: Code
 
    
    shift
@@ -32,6 +33,7 @@ Schematics
 .. toctree::
    :maxdepth: 1
    :glob:
+   :caption: Schematics
 
    inputcircuit
    outputcircuit
