@@ -76,9 +76,11 @@ If the user wants to change the values on the fly, they can do so by inserting t
 
    import busio
    import uart_object
-
+   
    uart = busio.UART(board.TX, board.RX, baudrate=9600)
    uart_object = uart_object.uart_container(uart)
+
+   
 
 
    while True:

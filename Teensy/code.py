@@ -102,6 +102,53 @@ def init():
    global output0_obj
    output0_obj = output_obj.output_container(c.output0,0)
 
+   global output1_obj
+   output1_obj = output_obj.output_container(c.output1,0)
+
+   global output2_obj
+   output2_obj = output_obj.output_container(c.output2,0)
+
+   global output3_obj
+   output3_obj = output_obj.output_container(c.output3,0)
+
+   global output4_obj
+   output4_obj = output_obj.output_container(c.output4,0)
+
+   global output5_obj
+   output5_obj = output_obj.output_container(c.output5,0)
+
+   global output6_obj
+   output6_obj = output_obj.output_container(c.output6,0)
+
+   global output7_obj
+   output7_obj = output_obj.output_container(c.output7,0)
+
+   global input0_obj
+   input0_obj = input_obj.input_container(c.input0,0)
+
+   global input1_obj
+   input1_obj = input_obj.input_container(c.input1,0)
+
+   global input2_obj
+   input2_obj = input_obj.input_container(c.input2,0)
+
+   global input3_obj
+   input3_obj = input_obj.input_container(c.input3,0)
+
+   global input4_obj
+   input4_obj = input_obj.input_container(c.input4,0)
+
+   global input5_obj
+   input5_obj = input_obj.input_container(c.input5,0)
+
+   global input6_obj
+   input6_obj = input_obj.input_container(c.input6,0)
+
+   global input7_obj
+   input7_obj = input_obj.input_container(c.input7,0)
+
+   
+
    return
 
 
