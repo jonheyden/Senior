@@ -4,26 +4,29 @@ class uart_container:
    def __init__(self, uart_) -> None:
       
       self.uartob = uart_
+      #PID [kp, ki, kd, min_output, max_output, min_input, max_input, sample_time, setpoint, mode, enable]
       self.pidarr = [
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0]          
+         [0,0,0,0,0,0,0,0,0,0,0], 
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0]          
       ]
+      #input [eng high, eng low, mode]
       self.inputarr = [
-         [0,0,0,0,0],
-         [0,0,0,0,0],
-         [0,0,0,0,0],
-         [0,0,0,0,0],
-         [0,0,0,0,0],
-         [0,0,0,0,0], 
-         [0,0,0,0,0],
-         [0,0,0,0,0]
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0], 
+         [0,0,0],
+         [0,0,0]
       ]
+      #output [mode]
       self.outputarr = [
          [0],
          [0],
@@ -34,6 +37,7 @@ class uart_container:
          [0],
          [0]
       ]
+      #Relay [on/off]
       self.relayarr = [
          [0],
          [0],
@@ -44,6 +48,7 @@ class uart_container:
          [0],
          [0]
       ]
+      #LTC [Sensor Type, Sensor Type, Sensor Type, Sensor Type]
       self.ltcarr = [
          [0,0,0,0],
          [0,0,0,0],

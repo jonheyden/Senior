@@ -124,8 +124,8 @@ class PID_Object:
       if input > self.__max_input:
          input = self.__max_input
 
-      if self.__check_time() and self.__enable:         
-         if self.__auto_mode:
+      if self.__enable:         
+         if self.__auto_mode and self.__check_time():
             self.__error_update(input)
             self.__pterm = self.__kp * self.__error
             self.__iterm += self.__error*self.__dt
@@ -205,6 +205,9 @@ class PID_Object:
       """      
       if not self.__auto_mode:
          self.__output = output
+         self.__output = max(self.__min_output, self.__output)
+         self.__output = min(self.__max_output, self.__output)
+
 
    def get_output(self):
       """get_output Returns the value of the output
@@ -214,4 +217,16 @@ class PID_Object:
       """      
       return self.__output
 
+   def set_limits(self,enghigh,englow):
+      """set_limits Setter for the output limits
+
+      :param enghigh: Maximum output value
+      :type enghigh: float
+      :param englow: Minimum output value
+      :type englow: float
+      """      
+      if enghigh > englow:
+         self.__max_input = enghigh
+         self.__min_input = englow
+      
 
