@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LTC2984" href="ltc.html" />
-    <link rel="prev" title="Welcome to Loop Controller and Remote I/O’s documentation!" href="../index.html" /> 
+    <link rel="prev" title="UART Object Usage" href="../API_Examples/uart_ex.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,14 +36,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Code</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Conditioner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
-<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
+              <p class="caption"><span class="caption-text">Schematics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../schematics/inputcircuit.html">Input Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schematics/ltc2984circuit.html">LTC2984 Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schematics/outputcircuit.html">Output Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schematics/powercircuit.html">Power Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schematics/relaycircuit.html">Relay and Digital Out Circuits</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schematics</span></p>
 <ul>
@@ -52,6 +51,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../schematics/outputcircuit.html">Output Circuit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../schematics/powercircuit.html">Power Circuit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../schematics/relaycircuit.html">Relay and Digital Out Circuits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/input_ex.html">Input Object Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/ltc_ex.html">LTC2984 Object Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/output_ex.html">Output Object Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/pid_ex.html">PID Object Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/shift_ex.html">Shift Register Object Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/uart_ex.html">UART Object Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API References</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
 </ul>
 
         </div>
@@ -70,7 +87,7 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Input Conditioner</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/codeob/inputob.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/API_References/inputob.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -82,17 +99,15 @@
 <span id="input-conditioner"></span><h1>Input Conditioner<a class="headerlink" href="#module-input_obj" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="input_obj.input_container">
-<em class="property">class </em><code class="sig-prename descclassname">input_obj.</code><code class="sig-name descname">input_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">raw_high</span></em>, <em class="sig-param"><span class="n">raw_low</span></em>, <em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#input_obj.input_container" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">input_obj.</code><code class="sig-name descname">input_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#input_obj.input_container" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="input_obj.input_container.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">raw_high</span></em>, <em class="sig-param"><span class="n">raw_low</span></em>, <em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#input_obj.input_container.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#input_obj.input_container.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>__init__ Initializes the input container object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> (<em>analogio.AnalogIn</em>) – The input pin</p></li>
-<li><p><strong>raw_high</strong> (<em>float</em>) – Raw high value</p></li>
-<li><p><strong>raw_low</strong> (<em>float</em>) – Raw low value</p></li>
 <li><p><strong>eng_high</strong> (<em>float</em>) – Engineering unit high value</p></li>
 <li><p><strong>eng_low</strong> (<em>float</em>) – Engineering unit low value</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) – The mode of the input (0-3)</p></li>
@@ -103,14 +118,12 @@
 
 <dl class="py method">
 <dt id="input_obj.input_container.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_high</span></em>, <em class="sig-param"><span class="n">raw_low</span></em>, <em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#input_obj.input_container.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eng_high</span></em>, <em class="sig-param"><span class="n">eng_low</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#input_obj.input_container.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>update Updates the input container object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> (<em>analogio.AnalogIn</em>) – The input pin</p></li>
-<li><p><strong>raw_high</strong> (<em>float</em>) – Raw high value</p></li>
-<li><p><strong>raw_low</strong> (<em>float</em>) – Raw low value</p></li>
 <li><p><strong>eng_high</strong> (<em>float</em>) – Engineering unit high value</p></li>
 <li><p><strong>eng_low</strong> (<em>float</em>) – Engineering unit low value</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) – The mode of the input (0-3)</p></li>
@@ -141,7 +154,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Loop Controller and Remote I/O’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../API_Examples/uart_ex.html" class="btn btn-neutral float-left" title="UART Object Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ltc.html" class="btn btn-neutral float-right" title="LTC2984" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

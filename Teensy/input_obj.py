@@ -1,14 +1,10 @@
 
 class input_container:
-   def __init__(self, input, raw_high, raw_low, eng_high, eng_low, mode) -> None:
+   def __init__(self, input, eng_high, eng_low, mode) -> None:
       """__init__ Initializes the input container object.
 
       :param input: The input pin
       :type input: analogio.AnalogIn
-      :param raw_high: Raw high value
-      :type raw_high: float
-      :param raw_low: Raw low value
-      :type raw_low: float
       :param eng_high: Engineering unit high value
       :type eng_high: float
       :param eng_low: Engineering unit low value
@@ -29,15 +25,11 @@ class input_container:
       self.__c_span = self.__absolute_high - 13107
       self.__v_span = self.__absolute_high//2
 
-   def update(self, raw_high, raw_low, eng_high, eng_low, mode) -> None:
+   def update(self, eng_high, eng_low, mode) -> None:
       """update Updates the input container object.
 
       :param input: The input pin
       :type input: analogio.AnalogIn
-      :param raw_high: Raw high value
-      :type raw_high: float
-      :param raw_low: Raw low value
-      :type raw_low: float
       :param eng_high: Engineering unit high value
       :type eng_high: float
       :param eng_low: Engineering unit low value
@@ -45,8 +37,6 @@ class input_container:
       :param mode: The mode of the input (0-3)
       :type mode: int
       """  
-      self.__raw_high = raw_high
-      self.__raw_low = raw_low
       self.__eng_high = eng_high
       self.__eng_low = eng_low
       if 0 <= mode <= 3:

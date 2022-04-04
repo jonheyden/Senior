@@ -9,21 +9,9 @@ Welcome to Loop Controller and Remote I/O's documentation!
 
 
 
-Code
-====
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   :caption: Code
 
-   
-   codeob/*
-
-
-
-Schematics
-===========
-
+Hardware and Schematics Overview
+=================================
 
 .. toctree::
    :maxdepth: 1
@@ -31,6 +19,47 @@ Schematics
    :caption: Schematics
 
    schematics/*
+
+
+
+Overview of Controller Function
+=================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: Schematics
+
+   schematics/*
+
+
+
+
+API Examples
+=============
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: API Examples
+
+   API_Examples/*
+
+
+API References
+=================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: API References
+
+   
+   API_References/*
+
+
+
+
 
 General Flow of the Program on the Teensy
 =========================================
