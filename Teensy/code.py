@@ -73,10 +73,13 @@ import board
 import pwmio
 import digitalio
 import shift_object
-#import input_obj
+import input_obj
 import output_obj
-#import pid_object
+import pid_object
 import config as c
+import uart_object
+import ltc2984
+import settings_handler
 
 # LED setup for most CircuitPython boards:
 #led = pwmio.PWMOut(board.LED, frequency=3411, duty_cycle=0)
@@ -98,6 +101,16 @@ def init():
 
    global digital_shiftreg
    digital_shiftreg = shift_object.shiftregister(c.digital_store, c.digital_enable, c.digital_shift, c.digital_data, 8)
+
+   global uart_obj
+   uart_obj = uart_obj.uart_container(c.onionuart)
+
+   global ltc_obj
+   ltc_obj = ltc2984.ltc2984(c.ltcspi, c.ltc_cs, c.ltc_interrupt)
+   sense_resistor_constant = (0x1d) | (0x1F4000 << 0) 
+   ltc_obj.chan_assignment(2, sense_resistor_constant)
+   cold_junction = (0x1c << 27) | (0x1 << 26) | (0x1 << 25) | (0x0 << 24) | (0x1 << 22) | (0x100c49 << 0) 
+   ltc_obj.chan_assignment(20, cold_junction)
 
    global output0_obj
    output0_obj = output_obj.output_container(c.output0,0)
@@ -147,7 +160,43 @@ def init():
    global input7_obj
    input7_obj = input_obj.input_container(c.input7,0)
 
-   
+
+
+   global in_container
+   in_container = [input0_obj, input1_obj, input2_obj, input3_obj, input4_obj, input5_obj, input6_obj, input7_obj]
+
+   global out_container
+   out_container = [output0_obj, output1_obj, output2_obj, output3_obj, output4_obj, output5_obj, output6_obj, output7_obj]
+
+   global pid_obj0
+   pid_obj0 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj1
+   pid_obj1 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj2
+   pid_obj2 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj3
+   pid_obj3 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj4
+   pid_obj4 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj5
+   pid_obj5 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj6
+   pid_obj6 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_obj7
+   pid_obj7 = pid_object.PID_Object(0,0,0,0,100,0,100,500)
+
+   global pid_container
+   pid_container = [pid_obj0, pid_obj1, pid_obj2, pid_obj3, pid_obj4, pid_obj5, pid_obj6, pid_obj7]
+
+   global settings_obj
+   settings_obj = settings_handler.setting_container(in_container, out_container, input_shiftreg, output_shiftreg, relay_shiftreg, digital_shiftreg, pid_container, ltc_obj)
 
    return
 

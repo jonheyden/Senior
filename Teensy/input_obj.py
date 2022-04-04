@@ -44,6 +44,14 @@ class input_container:
       else:
          self.__mode = 0
 
+   def get_mode(self) -> int:
+      """get_mode Returns the mode of the input
+
+      :return: The mode of the input
+      :rtype: int
+      """
+      return self.__mode
+      
    def value(self) -> float:
       """value Returns the input value
 

@@ -217,16 +217,37 @@ class PID_Object:
       """      
       return self.__output
 
-   def set_limits(self,enghigh,englow):
-      """set_limits Setter for the output limits
+   def set_input_low(self, englow):
+      """set_input_low Setter for the minimum input value
 
-      :param enghigh: Maximum output value
-      :type enghigh: float
-      :param englow: Minimum output value
+      :param englow: Minimum input value
       :type englow: float
       """      
-      if enghigh > englow:
-         self.__max_input = enghigh
-         self.__min_input = englow
+      self.__min_input = englow
+
+   def set_input_high(self, enghigh):
+      """set_input_high Setter for the maximum input value
+
+      :param enghigh: Maximum input value
+      :type enghigh: float
+      """      
+      self.__max_input = enghigh
+
+   def set_min_output(self, min_output):
+      """set_min_output Setter for the minimum output value
+
+      :param min_output: Minimum output value
+      :type min_output: float
+      """      
+      self.__min_output = min_output
+
+   def set_max_output(self, max_output):
+      """set_max_output Setter for the maximum output value
+
+      :param max_output: Maximum output value
+      :type max_output: float
+      """      
+      self.__max_output = max_output
+      
       
 

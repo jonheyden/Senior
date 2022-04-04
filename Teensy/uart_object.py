@@ -48,6 +48,16 @@ class uart_container:
          [0],
          [0]
       ]
+      self.digitalarr = [
+         [0],
+         [0],
+         [0],
+         [0],
+         [0],
+         [0], 
+         [0],
+         [0]
+      ]         
       #LTC [Sensor Type, Sensor Type, Sensor Type, Sensor Type]
       self.ltcarr = [
          [0,0,0,0],
@@ -85,6 +95,12 @@ class uart_container:
                y = self.get_decode()
                self.relayarr[i] = list(map(int,y))
                self.uartob.write(b'recieved')
+         elif x == ['digital']:
+            self.uartob.write(b'recieved')
+            for i in range(8):
+               y = self.get_decode()
+               self.digitalarr[i] = list(map(int,y))
+               self.uartob.write(b'recieved')         
          elif x == ['ltc']:
             self.uartob.write(b'recieved')
             for i in range(4):
