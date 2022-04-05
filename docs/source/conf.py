@@ -20,6 +20,7 @@ for mod_name in mock_modules:
 
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../../Teensy'))
+sys.path.insert(0, os.path.abspath('../../Teensy/Containers'))
 sys.path.insert(0, os.path.abspath('../../Onion'))
 
 import pid_object
