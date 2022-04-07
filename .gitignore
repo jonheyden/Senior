@@ -1,3 +1,4 @@
 #python test files
 /Teensy/tbcode.py
 /Teensy/testltcspi.py
+/Teensy/spi_device.py

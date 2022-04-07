@@ -1,9 +1,4 @@
 
-
-
-
-
-
 #Address
 command_status_reg = 0x000
 temp_results_reg = 0x010
