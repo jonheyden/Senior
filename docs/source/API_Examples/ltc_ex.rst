@@ -54,21 +54,21 @@ For Thermocouples, the ltc2984.generate_thermocouple_assignment_data() function 
 
    channel3_assignment = ltc_obj.generate_thermocouple_assignment_data(2)
 
-For RTD's, the ltc2984.generate_rtd_assignment_data() function can be used to create the assigment data. The function takes in a value from 1-8 that relates to RTD type, as well as a wire count should it be a 2, 3, or 4 wire device.
+For RTD's, the ltc2984.generate_rtd_assignment_data() function can be used to create the assigment data. The function takes in a value from 10-17 that relates to RTD type, as well as a wire count should it be a 2, 3, or 4 wire device.
 
 
 .. code-block:: python
    :caption: Using the same ltc2984 object from above
    
    """
-   PT 10 = 1
-   PT 50 = 2
-   PT 100 = 3
-   PT 200 = 4
-   PT 500 = 5
-   PT 1000 = 6
-   PT 1000 375 = 7
-   NI 120 = 8
+   PT 10 = 10
+   PT 50 = 11
+   PT 100 = 12
+   PT 200 = 13
+   PT 500 = 14
+   PT 1000 = 15
+   PT 1000 375 = 16
+   NI 120 = 17
    """
 
    channel8_assignment = ltc_obj.generate_rtd_assignment_data(5,3)

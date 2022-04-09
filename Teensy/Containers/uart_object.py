@@ -15,7 +15,7 @@ class uart_container:
          [0,0,0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0,0,0]          
       ]
-      #input [eng high, eng low, mode]
+      #input [mode, eng high, eng low]
       self.inputarr = [
          [0,0,0],
          [0,0,0],
@@ -26,16 +26,16 @@ class uart_container:
          [0,0,0],
          [0,0,0]
       ]
-      #output [mode]
+      #output [mode,output_value,enable]
       self.outputarr = [
-         [0],
-         [0],
-         [0],
-         [0],
-         [0],
-         [0], 
-         [0],
-         [0]
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0],
+         [0,0,0], 
+         [0,0,0],
+         [0,0,0]
       ]
       #Relay [on/off]
       self.relayarr = [
@@ -57,7 +57,7 @@ class uart_container:
          [0], 
          [0],
          [0]
-      ]         
+      ]      
       #LTC [Sensor Type, Sensor Type, Sensor Type, Sensor Type]
       self.ltcarr = [
          [0,0,0,0],

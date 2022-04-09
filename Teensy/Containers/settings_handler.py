@@ -164,7 +164,8 @@ class setting_container:
                   else:
                      self.__outputValue = self.__outputValue | (3 << (i*2)) 
                if j == 1:
-                  self.__output_array[i].value(self.__outputarr[i][j])
+                  if self.__outputarr[i][j] >= 0:
+                     self.__output_array[i].value(self.__outputarr[i][j])
                if j == 2:
                      if self.__outputarr[i][j] == 0:
                         self.__output_array[i].disable()

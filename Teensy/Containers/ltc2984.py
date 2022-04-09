@@ -42,17 +42,13 @@ class ltc2984:
       :return: 32 bit data
       :rtype: int
       """      
-      if value >= 1 and value <= 8:
-         value_mod = value + 9
-      else:
-         value_mod = 14
 
       if wire_count == 2:
-         return (value_mod << 27 ) | (0x0 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
+         return (value << 27 ) | (0x0 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
       if wire_count == 3:
-         return (value_mod << 27 ) | (0x1 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
+         return (value << 27 ) | (0x1 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
       if wire_count == 4:
-         return (value_mod << 27 ) | (0x2 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)      
+         return (value << 27 ) | (0x2 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)      
 
    def chan_assignment(self, channel, data) -> None:
       """chan_assignment assigns channel
