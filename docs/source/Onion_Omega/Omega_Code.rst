@@ -46,7 +46,8 @@ The first code block is an example of generating the tag names in an array for a
 
 This next code block are the arrays that will hold our read/write values until they can be written to a text file. 
 
-.. code-block::python
+.. code-block:: python
+   :caption: Array Generation
 
    pidarr = [
       [0,0,0,0,0,0,0,0,0,0,0], 
@@ -117,7 +118,8 @@ This next code block are the arrays that will hold our read/write values until t
 
 Below are two helper functions that will be used to read and write values to the PLC.
 
-.. code-block::python
+.. code-block:: python
+   :caption: Helper Functions
 
    def read_settings(plcad, array):
       with pycomm3.LogixDriver(plcad) as plc:
@@ -131,7 +133,8 @@ Below are two helper functions that will be used to read and write values to the
 
 This code block is the Main Loop of the program. The first section starts by reading the different tag values, held as custom structures in the PLC with the tag name associated in the array.
 
-.. code-block::python
+.. code-block:: python
+   :caption: Main Loop
 
    while(1):
       inputs = read_settings(plc_address, input_array_tags)
@@ -167,7 +170,8 @@ This code block is the Main Loop of the program. The first section starts by rea
 
 For ease of use with the existing comm.py program, we write the settings to the settings.txt file. 
 
-.. code-block::python
+.. code-block:: python
+   :caption: Main Loop
 
       settingsfile = open('settings.txt', 'w')
       
@@ -216,13 +220,16 @@ For ease of use with the existing comm.py program, we write the settings to the 
 
 Once this is done, we will then call the subprocess.call() function on our existing comm.py script. This function will not return until the script is done running. 
 
-.. code-block::python
+.. code-block:: python
+   :caption: Main Loop
+
       process = subprocess.call(['python', 'comm.py'], shell=True)
 
 
 Below is the script being called by the subprocess.call() function. The script will read the settings.txt file and then write the values to the Teensy. After this, it will request the output information from the Teensy and write it to the values.txt file.
 
-.. code-block::python
+.. code-block:: python
+   :caption: comm.py
 
    import serial
    import time
@@ -280,7 +287,8 @@ Below is the script being called by the subprocess.call() function. The script w
 
 Once back in the main program, we will now open our values.txt and read the data into their proper arrays. 
 
-.. code-block::python
+.. code-block:: python
+   :caption: Main Loop
 
       inputfile = open('values.txt', 'r')
       for i in range(len(inputarray)):
@@ -318,7 +326,8 @@ For the digital array, it is the value of each digital output (on/off).
 
 For the LTC Array, it is the returned value of each of the active channels, 0 otherwise. 
 
-.. code-block::python
+.. code-block:: python
+   :caption: Main Loop
 
       write_values(plc_address, input_array_tags, inputarray)
       write_values(plc_address, output_array_tags, outputvalue)
@@ -331,7 +340,8 @@ For the LTC Array, it is the returned value of each of the active channels, 0 ot
 
 Below are some examples of how to create structures to send to the PLC, which have to match the structure of the PLC.
 
-.. code-block::python
+.. code-block:: python
+   :caption: Structure Examples
 
 
    def input_struct(inputnum,mode, enghigh, englow):
