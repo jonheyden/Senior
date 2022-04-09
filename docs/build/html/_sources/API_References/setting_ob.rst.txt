@@ -1,5 +1,5 @@
 Settings Handler
-================
+=================
 
 .. automodule:: settings_handler
    :members:

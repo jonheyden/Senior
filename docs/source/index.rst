@@ -32,7 +32,7 @@ Overview of Controller Function
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Placeholder
+   :caption: Controller Function
 
    contfunction
 
@@ -82,7 +82,7 @@ Function of Onion Omega
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Placeholder
+   :caption: Onion Omega Function
 
    Onion_Omega/*
 
