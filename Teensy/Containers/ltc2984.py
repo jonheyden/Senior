@@ -42,12 +42,17 @@ class ltc2984:
       :return: 32 bit data
       :rtype: int
       """      
+      if value >= 1 and value <= 8:
+         value_mod = value + 9
+      else:
+         value_mod = 14
+
       if wire_count == 2:
-         return (value << 27 ) | (0x0 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
+         return (value_mod << 27 ) | (0x0 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
       if wire_count == 3:
-         return (value << 27 ) | (0x1 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
+         return (value_mod << 27 ) | (0x1 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)
       if wire_count == 4:
-         return (value << 27 ) | (0x2 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)      
+         return (value_mod << 27 ) | (0x2 << 22) | (0x1 << 20) | (0x1 << 18) | (0x7 << 14) | (0x1 << 12)      
 
    def chan_assignment(self, channel, data) -> None:
       """chan_assignment assigns channel
@@ -177,11 +182,11 @@ class ltc2984:
             process_finished = return_data[3] & 0x40
             if (process_finished == 0x40):
                self.__spi.unlock()
-               return
+               return True
          else:
-            print("SPI Not Locked")
+            print("SPI Not Locked or Conversion incomplete")
             self.__spi.unlock()
-            return
+            return False
 
    def read_data(self, channel) -> float:
       """read_data Reads data from the requested ram location

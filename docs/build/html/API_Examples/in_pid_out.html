@@ -14,6 +14,8 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -178,7 +180,7 @@
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
    <span class="n">uart_object</span><span class="o">.</span><span class="n">check_buffer</span><span class="p">()</span>
-   <span class="n">settings_obj</span><span class="o">.</span><span class="n">check_update</span><span class="p">(</span><span class="n">uart</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+   <span class="n">settings_obj</span><span class="o">.</span><span class="n">check_update</span><span class="p">(</span><span class="n">uart_object</span><span class="p">)</span>
    <span class="n">output_object0</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">PID_0</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">input_object0</span><span class="o">.</span><span class="n">get_input</span><span class="p">()))</span>
 </pre></div>
 </div>

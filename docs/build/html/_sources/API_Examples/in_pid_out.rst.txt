@@ -88,7 +88,7 @@ If the user wants to change the values on the fly, they can do so by inserting t
 
    while True:
       uart_object.check_buffer()
-      settings_obj.check_update(uart.object)
+      settings_obj.check_update(uart_object)
       output_object0.value(PID_0.update(input_object0.get_input()))
 
 
