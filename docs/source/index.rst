@@ -18,7 +18,11 @@ Hardware and Schematics Overview
    :glob:
    :caption: Schematics
 
-   schematics/*
+   schematics/inputcircuit
+   schematics/outputcircuit
+   schematics/ltc2984circuit
+   schematics/powercircuit
+   schematics/relaycircuit
 
 
 
@@ -28,9 +32,9 @@ Overview of Controller Function
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Schematics
+   :caption: Placeholder
 
-   schematics/*
+   contfunction
 
 
 
@@ -43,7 +47,15 @@ API Examples
    :glob:
    :caption: API Examples
 
-   API_Examples/*
+   API_Examples/input_ex
+   API_Examples/output_ex
+   API_Examples/pid_ex
+   API_Examples/ltc_ex
+   API_Examples/shift_ex
+   API_Examples/uart_ex
+   API_Examples/settings_handler
+   API_Examples/settings_text
+   API_Examples/in_pid_out
 
 
 API References
@@ -55,10 +67,24 @@ API References
    :caption: API References
 
    
-   API_References/*
+   API_References/inputob
+   API_References/outputob
+   API_References/pidob
+   API_References/ltc
+   API_References/shift
+   API_References/uart
+   API_References/setting_ob
 
 
+Function of Onion Omega
+=========================
 
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: Placeholder
+
+   Onion_Omega/*
 
 
 General Flow of the Program on the Teensy

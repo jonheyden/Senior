@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uart Object &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Code on Onion Omega &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,8 +17,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Settings Handler" href="setting_ob.html" />
-    <link rel="prev" title="Shift Register" href="shift.html" /> 
+    <link rel="prev" title="Settings Handler" href="../API_References/setting_ob.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,18 +60,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../API_Examples/in_pid_out.html">Putting It All Together</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API References</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="inputob.html">Input Conditioner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Uart Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setting_ob.html">Settings Handler</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/inputob.html">Input Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/outputob.html">Output Conditioner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/pidob.html">PID Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/ltc.html">LTC2984</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/shift.html">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/uart.html">Uart Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_References/setting_ob.html">Settings Handler</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Placeholder</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Onion_Omega/Omega_Code.html">Code on Onion Omega</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code on Onion Omega</a></li>
 </ul>
 
         </div>
@@ -89,9 +88,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Uart Object</li>
+      <li>Code on Onion Omega</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/API_References/uart.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Onion_Omega/Omega_Code.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -99,37 +98,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-uart_object">
-<span id="uart-object"></span><h1>Uart Object<a class="headerlink" href="#module-uart_object" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="uart_object.uart_container">
-<em class="property">class </em><code class="sig-prename descclassname">uart_object.</code><code class="sig-name descname">uart_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uart_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#uart_object.uart_container" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="uart_object.uart_container.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uart_</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#uart_object.uart_container.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="uart_object.uart_container.check_buffer">
-<code class="sig-name descname">check_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uart_object.uart_container.check_buffer" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="uart_object.uart_container.get_decode">
-<code class="sig-name descname">get_decode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uart_object.uart_container.get_decode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="code-on-onion-omega">
+<h1>Code on Onion Omega<a class="headerlink" href="#code-on-onion-omega" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="shift.html" class="btn btn-neutral float-left" title="Shift Register" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="setting_ob.html" class="btn btn-neutral float-right" title="Settings Handler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../API_References/setting_ob.html" class="btn btn-neutral float-left" title="Settings Handler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

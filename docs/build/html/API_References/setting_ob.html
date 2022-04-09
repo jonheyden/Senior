@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shift Register &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Settings Handler &mdash; Loop Controller and Remote I/O 0.0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -17,8 +17,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Uart Object" href="uart.html" />
-    <link rel="prev" title="LTC2984" href="ltc.html" /> 
+    <link rel="next" title="Code on Onion Omega" href="../Onion_Omega/Omega_Code.html" />
+    <link rel="prev" title="Uart Object" href="uart.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,9 +66,9 @@
 <li class="toctree-l1"><a class="reference internal" href="outputob.html">Output Conditioner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pidob.html">PID Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltc.html">LTC2984</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shift.html">Shift Register</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uart.html">Uart Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setting_ob.html">Settings Handler</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Settings Handler</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Placeholder</span></p>
 <ul>
@@ -89,9 +89,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Shift Register</li>
+      <li>Settings Handler</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/API_References/shift.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/API_References/setting_ob.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -99,89 +99,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-shift_object">
-<span id="shift-register"></span><h1>Shift Register<a class="headerlink" href="#module-shift_object" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-settings_handler">
+<span id="settings-handler"></span><h1>Settings Handler<a class="headerlink" href="#module-settings_handler" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="shift_object.shiftregister">
-<em class="property">class </em><code class="sig-prename descclassname">shift_object.</code><code class="sig-name descname">shiftregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shift_object.shiftregister" title="Permalink to this definition">¶</a></dt>
+<dt id="settings_handler.setting_container">
+<em class="property">class </em><code class="sig-prename descclassname">settings_handler.</code><code class="sig-name descname">setting_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i_container</span></em>, <em class="sig-param"><span class="n">o_container</span></em>, <em class="sig-param"><span class="n">i_shiftreg</span></em>, <em class="sig-param"><span class="n">o_shiftreg</span></em>, <em class="sig-param"><span class="n">r_shiftreg</span></em>, <em class="sig-param"><span class="n">d_shiftreg</span></em>, <em class="sig-param"><span class="n">p_container</span></em>, <em class="sig-param"><span class="n">ltcob</span></em><span class="sig-paren">)</span><a class="headerlink" href="#settings_handler.setting_container" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt id="shift_object.shiftregister.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store</span></em>, <em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">serial_out</span></em>, <em class="sig-param"><span class="n">outputs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>__init__ initializes the shift register object.</p>
+<dt id="settings_handler.setting_container.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i_container</span></em>, <em class="sig-param"><span class="n">o_container</span></em>, <em class="sig-param"><span class="n">i_shiftreg</span></em>, <em class="sig-param"><span class="n">o_shiftreg</span></em>, <em class="sig-param"><span class="n">r_shiftreg</span></em>, <em class="sig-param"><span class="n">d_shiftreg</span></em>, <em class="sig-param"><span class="n">p_container</span></em>, <em class="sig-param"><span class="n">ltcob</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#settings_handler.setting_container.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>__init__ Initializes the setting_container object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>store</strong> (<em>DigitalInOut</em>) – Storage Register clock pin</p></li>
-<li><p><strong>enable</strong> (<em>DigitalInOut</em>) – OE pin</p></li>
-<li><p><strong>shift</strong> (<em>DigitalInOut</em>) – Shift Register clock pin</p></li>
-<li><p><strong>data</strong> (<em>DigitalInOut</em>) – Data Pin</p></li>
-<li><p><strong>outputs</strong> (<em>Integer</em>) – Number of outputs (8 or 16)</p></li>
+<li><p><strong>i_container</strong> (<em>list</em>) – Input container array</p></li>
+<li><p><strong>o_container</strong> (<em>list</em>) – Output container array</p></li>
+<li><p><strong>i_shiftreg</strong> (<a class="reference internal" href="shift.html#shift_object.shiftregister" title="shift_object.shiftregister"><em>shift_object.shiftregister</em></a>) – input Shiftregister Object</p></li>
+<li><p><strong>o_shiftreg</strong> (<a class="reference internal" href="shift.html#shift_object.shiftregister" title="shift_object.shiftregister"><em>shift_object.shiftregister</em></a>) – Output Shift Register Object</p></li>
+<li><p><strong>r_shiftreg</strong> (<a class="reference internal" href="shift.html#shift_object.shiftregister" title="shift_object.shiftregister"><em>shift_object.shiftregister</em></a>) – Relay Shift Register Object</p></li>
+<li><p><strong>d_shiftreg</strong> (<a class="reference internal" href="shift.html#shift_object.shiftregister" title="shift_object.shiftregister"><em>shift_object.shiftregister</em></a>) – Digital Shift Register Object</p></li>
+<li><p><strong>p_container</strong> (<em>list</em>) – PID Container array</p></li>
+<li><p><strong>ltcob</strong> (<a class="reference internal" href="ltc.html#ltc2984.ltc2984" title="ltc2984.ltc2984"><em>ltc2984.ltc2984</em></a>) – LTC2984 Object</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="shift_object.shiftregister._shiftregister__shift_data">
-<code class="sig-name descname">_shiftregister__shift_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__shift_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>__shift_data Private Method used to shift data into the shift register.</p>
+<dt id="settings_handler.setting_container.check_update">
+<code class="sig-name descname">check_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uartob</span></em><span class="sig-paren">)</span><a class="headerlink" href="#settings_handler.setting_container.check_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>check_update Checks the uart object for new data and updates the settings container accordingly</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be shifted</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
+<dd class="field-odd"><p><strong>uartob</strong> (<a class="reference internal" href="uart.html#uart_object.uart_container" title="uart_object.uart_container"><em>uart_object.uart_container</em></a>) – Uart Container Object</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister._shiftregister__store_data">
-<code class="sig-name descname">_shiftregister__store_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister._shiftregister__store_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>__store_data Stores data from the shift register into the storage register.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.data">
-<code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#shift_object.shiftregister.data" title="Permalink to this definition">¶</a></dt>
-<dd><p>data Returns the current data in the shift register.
-:returns: Integer</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.disable">
-<code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.disable" title="Permalink to this definition">¶</a></dt>
-<dd><p>disable Disables the OE pin.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.enable">
-<code class="sig-name descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.enable" title="Permalink to this definition">¶</a></dt>
-<dd><p>enable Enables the OE pin.
-:returns: None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>update Checks if data is new, sets a flag.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Integer</em>) – Data to be checked and used to update the shift register</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="shift_object.shiftregister.zero">
-<code class="sig-name descname">zero</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shift_object.shiftregister.zero" title="Permalink to this definition">¶</a></dt>
-<dd><p>zero Sets the shift register to 0.
-:returns: None</p>
 </dd></dl>
 
 </dd></dl>
@@ -192,8 +143,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ltc.html" class="btn btn-neutral float-left" title="LTC2984" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="uart.html" class="btn btn-neutral float-right" title="Uart Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="uart.html" class="btn btn-neutral float-left" title="Uart Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Onion_Omega/Omega_Code.html" class="btn btn-neutral float-right" title="Code on Onion Omega" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
