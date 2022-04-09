@@ -19,6 +19,10 @@ The first code block is an example of generating the tag names in an array for a
 .. code-block:: python
    :caption: Generating Tag Names
 
+   #Initialization Variables to be set by user
+   plc_address = "10.20.30.100"
+
+
    input_array_tags = ['input0', 'input1', 'input2', 'input3', 'input4', 'input5', 'input6', 'input7']
    output_array_tags = ['output0', 'output1', 'output2', 'output3', 'output4', 'output5', 'output6', 'output7']
    pid_array_tags = ['pid0', 'pid1', 'pid2', 'pid3', 'pid4', 'pid5', 'pid6', 'pid7']

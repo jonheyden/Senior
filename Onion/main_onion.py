@@ -58,67 +58,6 @@ def ltc_struct(banknum,sensortype0,sensortype1,sensortype2,sensortype3):
 plc_address = "10.20.30.100"
 
 
-'''
-input0 = input_struct('0',0,0,0)
-input1 = input_struct('1',0,0,0)
-input2 = input_struct('2',0,0,0)
-input3 = input_struct('3',0,0,0)
-input4 = input_struct('4',0,0,0)
-input5 = input_struct('5',0,0,0)
-input6 = input_struct('6',0,0,0)
-input7 = input_struct('7',0,0,0)
-
-output0 = output_struct('0',0,0,0)
-output1 = output_struct('1',0,0,0)
-output2 = output_struct('2',0,0,0)
-output3 = output_struct('3',0,0,0)
-output4 = output_struct('4',0,0,0)
-output5 = output_struct('5',0,0,0)
-output6 = output_struct('6',0,0,0)
-output7 = output_struct('7',0,0,0)
-
-pid0 = pid_struct('0',0,0,0,0,0,0,0,0,0,0,0)
-pid1 = pid_struct('1',0,0,0,0,0,0,0,0,0,0,0)
-pid2 = pid_struct('2',0,0,0,0,0,0,0,0,0,0,0)
-pid3 = pid_struct('3',0,0,0,0,0,0,0,0,0,0,0)
-pid4 = pid_struct('4',0,0,0,0,0,0,0,0,0,0,0)
-pid5 = pid_struct('5',0,0,0,0,0,0,0,0,0,0,0)
-pid6 = pid_struct('6',0,0,0,0,0,0,0,0,0,0,0)
-pid7 = pid_struct('7',0,0,0,0,0,0,0,0,0,0,0)
-
-relay0 = {'relay0' : 0}
-relay1 = {'relay1' : 0}
-relay2 = {'relay2' : 0}
-relay3 = {'relay3' : 0}
-relay4 = {'relay4' : 0}
-relay5 = {'relay5' : 0}
-relay6 = {'relay6' : 0}
-relay7 = {'relay7' : 0}
-
-digital0 = {'digital0' : 0}
-digital1 = {'digital1' : 0}
-digital2 = {'digital2' : 0}
-digital3 = {'digital3' : 0}
-digital4 = {'digital4' : 0}
-digital5 = {'digital5' : 0}
-digital6 = {'digital6' : 0}
-digital7 = {'digital7' : 0}
-
-ltc0 = ltc_struct('0',0,0,0,0)
-ltc1 = ltc_struct('1',0,0,0,0)
-ltc2 = ltc_struct('2',0,0,0,0)
-ltc3 = ltc_struct('3',0,0,0,0)
-
-
-
-input_array = [input0,input1,input2,input3,input4,input5,input6,input7]
-output_array = [output0,output1,output2,output3,output4,output5,output6,output7]
-pid_array = [pid0,pid1,pid2,pid3,pid4,pid5,pid6,pid7]
-relay_array = [relay0,relay1,relay2,relay3,relay4,relay5,relay6,relay7]
-digital_array = [digital0,digital1,digital2,digital3,digital4,digital5,digital6,digital7]
-ltc_array = [ltc0,ltc1,ltc2,ltc3]
-'''
-
 input_array_tags = ['input0', 'input1', 'input2', 'input3', 'input4', 'input5', 'input6', 'input7']
 output_array_tags = ['output0', 'output1', 'output2', 'output3', 'output4', 'output5', 'output6', 'output7']
 pid_array_tags = ['pid0', 'pid1', 'pid2', 'pid3', 'pid4', 'pid5', 'pid6', 'pid7']
@@ -323,7 +262,7 @@ while(1):
    write_values(plc_address, digital_array_tags, digitalarr)
    write_values(plc_address, ltc_array_tags, ltcarr)
 
-   
+
 
    
 
