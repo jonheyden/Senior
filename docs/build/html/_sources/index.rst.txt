@@ -6,12 +6,18 @@
 Welcome to Loop Controller and Remote I/O's documentation!
 ==========================================================
 
+Purpose of the project
+++++++++++++++++++++++
 
+The purpose of this project is to create a cost effective solution to expensive industrial controls. Industrial I/O is generally overly priced for what the hardware can actually do. Oftentimes the end-user is paying a premium for the brand name. While other solutions exist in other brands, their markdown is oftentimes not worth the price of trying to integrate another brand. 
 
+This documentation is broken into multiple parts starting with the Hardware.
 
 
 Hardware and Schematics Overview
-=================================
++++++++++++++++++++++++++++++++++
+
+Links to the hardware can be found below. These are the schematics that were used to build the intial protoboard for proof-of-concept. These schematics provide a base for circuits with multi-fucntionality in processing and creating analog and digital signals for industrial I/O. 
 
 .. toctree::
    :maxdepth: 1
@@ -26,21 +32,29 @@ Hardware and Schematics Overview
 
 
 
-Overview of Controller Function
-=================================
+Function of the Teensy
+++++++++++++++++++++++++
+
+The Teensy is the heart of the board. It controls all of the I/O as well as the PID calculations. It also handles the SPI communication to the LTC2984, and communicates through UART with the Onion Omega. 
+
+The Teensy 4.1 is capable of 600MHz, as well as being programmable through Circuit Python which was used almost exclusively. 
+
+
+
+
+Function of Onion Omega
+++++++++++++++++++++++++
+
+This link provide information relative to the Onion Omega Controller. The Onion Omega is used as a data aggregate and can act as a wifi hotspot capable of allowing wireless access to the controller functionality. 
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Controller Function
+   :caption: Onion Omega Function
 
-   contfunction
-
-
+   Onion_Omega/*
 
 
-API Examples
-=============
 
 .. toctree::
    :maxdepth: 1
@@ -58,8 +72,6 @@ API Examples
    API_Examples/in_pid_out
 
 
-API References
-=================
 
 .. toctree::
    :maxdepth: 1
@@ -76,44 +88,4 @@ API References
    API_References/setting_ob
 
 
-Function of Onion Omega
-=========================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   :caption: Onion Omega Function
-
-   Onion_Omega/*
-
-
-General Flow of the Program on the Teensy
-=========================================
-
-Input Container -> PID Object -> Output Container
-
-
-Jobs of the classes
--------------------
-
-Input Container
-+++++++++++++++
-
-- Converts the raw input from the inputs (0-65535) to a value in engineering units.
-
-
-PID Object
-+++++++++++++++
-
-- Takes the engineering unit value from the input container and returns a value from 0-100 which is the value of the output in terms of percent.
-
-
-Output Container
-++++++++++++++++
-
-- Sets the mode of the output pin (4-20mA, 0-10VDC, 0-5VDC).
-- Takes the value from 0-100 and ouputs the value to the outputs (0-65535) with regard to the mode it is in.
-
-
-General Flow of the Program on the Onion Omega
-==============================================
