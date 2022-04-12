@@ -1,9 +1,7 @@
 '''
-This code is selective and for the purpose of Demo Day. 
+This code is selective and for the purpose of Demo Day to work with the Web Display. 
 
 '''
-
-
 import config as c
 import shift_object
 import output_obj
@@ -37,6 +35,9 @@ def init():
 
    global output1_obj
    output1_obj = output_obj.output_container(c.output1,0)
+
+   global input0_obj
+   input0_obj = output_obj.output_container(c.input0,2)
    
    global ltcob
    ltcob = ltc2984.ltc2984(c.ltcspi, c.ltc_cs, c.ltc_interrupt)
@@ -115,7 +116,7 @@ while(1):
       relay_shiftreg.update(0b00000000)
       relay_shiftreg.disable()
 
-   xsend = str(x//10)
+   xsend = str(input0_obj.value()//10)
    xsend = xsend + '\r'+ '\n'
    xsend = bytes(xsend, 'ascii')
    #print(temptocheck)
@@ -129,50 +130,3 @@ while(1):
    #time.sleep(.1)
    c.onionuart.write(xsend)
    #time.sleep(.1)
-
-'''
-import config as c
-import shift_object
-import output_obj
-
-
-
-
-output_shiftreg = shift_object.shiftregister(c.output_store, c.output_enable, c.output_shift, c.output_data, 16)
-#output_shiftreg.enable()
-#output_shiftreg.update(c.output_currentMode[1])
-
-
-
-output1_obj = output_obj.output_container(c.output1,0)
-#output1_obj.enable()
-#output1_obj.value(50)
-
-
-x = 0
-updown = 0
-
-
-while(1):
-
-   time.sleep(.5)
-      if updown == 0:
-         x += 1
-         if x == 100:
-            updown = 1
-      else:
-         x -= 1
-         if x == 0:
-            updown = 0 
-      countbit = 0
-   
-   output1_obj.value(x)
-   time.sleep(.1)
-
-
-
-
-
-
-
-'''
