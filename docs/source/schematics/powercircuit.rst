@@ -13,6 +13,25 @@ Fuse blocks were used to easily protect the power supplies, as well as the digit
 
 Parts
 -----
+
+.. csv-table:: Component Values
+   :header: "Component", "Value"
+   :widths: 25, 25 
+   :header-rows: 1
+
+   L1, 5.6uH
+   L2, 5.6uH
+   C39, 10uF
+   C40, 10uF
+   C41, 10uF
+   C42, 56uF
+   C43, 10uF
+   C44, 10uF
+   C45, 10uF
+   C46, 56uF
+
+
+
 :download:`TSR2-2433 and TSR2-2450 <../datasheets/Power/TSR.pdf>`
 
 :download:`Fuse Blocks <../datasheets/Power/Fuse.pdf>`

@@ -31,6 +31,31 @@ If the voltage at the negative terminal is the scaled 5VDC, then the current thr
 
 Parts
 -----
+
+.. csv-table:: Component Values
+   :header: "Component", "Value"
+   :widths: 25, 25 
+   :header-rows: 1
+
+   R36, 100kΩ
+   R37, 100kΩ
+   R38, 100kΩ
+   R39, 470Ω
+   R40, 3.3kΩ
+   R41, 470Ω
+   R42, 249Ω
+   R43, 10kΩ
+   R44, 10kΩ
+   R45, 10kΩ
+   R46, 5.49kΩ
+   C38, 3.7uF
+
+
+
+
+
+
+
 :download:`LM358QT Op Amp <../datasheets/Output/LM358.pdf>`
 
 :download:`CPC1002N Relay <../datasheets/Output/CPC1002N.pdf>`

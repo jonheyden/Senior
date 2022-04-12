@@ -25,7 +25,32 @@ A cold junction reference was created with a simple 2N3904 BJT that ties it's ba
 
 
 Parts
------
+------
+
+Resistors R12-R31 are all 100:math:`\Omega` resistors used to protect the channel.
+Capacitors C1-C16 are 0.01uF. 
+Capacitors C17-C32 are 100pF
+
+.. csv-table:: Component Values
+   :header: "Component", "Value"
+   :widths: 25, 25 
+   :header-rows: 1
+
+   LTC_Vref_bypass, 0.1uF
+   LTC_VrefOut1, 1uF
+   LTC_C1, 0.1uF
+   LTC_1, 2kΩ
+   LTC_Q1, 10uF
+   LTC_Q2, 10uF
+   LTC_LDO1, 10uF
+   C33, 100pF
+   C34, 0.01uF
+
+
+
+
+
+
 :download:`LTC2984 <../datasheets/LTC2984/LTC2984Datasheet.pdf>`
 
 :download:`PZT3904 <../datasheets/LTC2984/PZT3904.pdf>`

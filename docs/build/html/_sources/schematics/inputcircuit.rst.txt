@@ -41,9 +41,28 @@ Voltage Divider
 ----------------
 Once the calculation has been made, the voltage is then divided by 3 through the voltage divider circuit. This is then pushed into the last buffer that then goes to the input pin of the Teensy 4.1.
 
-
 Parts
 -----
+
+.. csv-table:: Component Values
+   :header: "Component", "Value"
+   :widths: 25, 25 
+   :header-rows: 1
+
+   R1, 100kΩ
+   R2, 10kΩ
+   R3, 10kΩ
+   R4, 470Ω
+   R5, 10kΩ
+   R6, 499Ω
+   R7, 10kΩ
+   R8, 10kΩ
+   R9, 10kΩ
+   R10, 10kΩ
+   R11, 100kΩ
+
+
+
 :download:`LM343QT Op Amp <../datasheets/Input/LM324.pdf>`
 
 :download:`CPC1002N Relay <../datasheets/Input/CPC1002N.pdf>`

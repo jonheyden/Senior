@@ -20,6 +20,10 @@ The Digital Outputs drain is connected to the 24VDC potential supplied to the bo
 
 Parts
 -----
+
+All resistors are the same 470:math:`\Omega` value.
+
+
 :download:`CD74HC595 <../datasheets/Relays/CD74.pdf>`
 
 .. image:: ../images/relay_dig_cir.jpg
