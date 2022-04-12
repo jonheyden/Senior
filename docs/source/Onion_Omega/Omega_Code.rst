@@ -2,16 +2,30 @@ Code on Onion Omega
 ======================
 
 
-There are two main programs that can be run on the Onion Omega. The first is a simple python script that will send the information located in the settings.txt file. 
+There are two main programs that can be run on the Onion Omega. The first is a simple python script that will send the information located in the settings.txt file. This can be found with the name `comm.py <https://github.com/jonheyden/Senior/blob/main/Onion/comm.py>`_ on the repository. 
 
-The configuration information can be found in the "How to Format Data for UART" section under "API Examples."
+The configuration information can be found in the "How to Format Data for UART" section.
+
+The other program is for CIP control through the ethernet port avaialble on the board. This program will create a CIP link to the targetted controller and start to read/write values based on the values of the PLC. The code can be found with the name `main_onion.py <https://github.com/jonheyden/Senior/blob/main/Onion/main_onion.py>`_ on the repository.
+
+This is possible by leveraging the `pycomm3 library <https://docs.pycomm3.dev/en/latest/>`_ by ottowayi. The Onion is capable of both python 2 and python 3. In order to use this library, the user must call python3 on the command line. For example:
+
+.. code-block:: bash
+
+   python3 main_onion.py
+
+The code can be made to run as a background process by adding & to the end of the command. For example:
+
+.. code-block:: bash
+
+   python3 main_onion.py &
+
+This can further be automated by making the program run on boot. For the purpose of this document, we will not cover that but the information can be found at the Onion Omega example site under `running a command on boot <https://docs.onion.io/omega2-docs/running-a-command-on-boot.html>`_.
 
 
-The other program is for CIP control through the ethernet port avaialble on the board. This program will create a CIP link to the targetted controller and start to read/write values based on the values of the PLC. 
+The code available through github is using a dummy IP, the address will need to be configured by the user. Further, the tags will need to be made available in the PLC by the user, either through an AOI or manually. The program will fail if it can not find the tags at the address expected. 
 
-This is possible by leveraging the pycomm3 library by ottowayi. The Onion is capable of both python 2 and python 3. In order to use this library, the user must call python3 on the command line.
-
-The code on available through github is using a dummy IP, the address will need to be configured by the user. Further, the tags will need to be made available in the PLC by the user, either through an AOI or manually. The program will fail if it can not find the tags at the address expected. 
+Because of licensing, the PLC code is not included but the structures for the tags can be found :ref:`below<Data Structures>`.
 
 The first code block is an example of generating the tag names in an array for accessing multiple tags at once.  
 
@@ -338,7 +352,11 @@ For the LTC Array, it is the returned value of each of the active channels, 0 ot
 
 
 
-Below are some examples of how to create structures to send to the PLC, which have to match the structure of the PLC.
+
+Data Structures
+++++++++++++++++
+
+Below are some examples of how to create structures to send to the PLC, which have to match the structure of the PLC. The user can use these to make 
 
 .. code-block:: python
    :caption: Structure Examples

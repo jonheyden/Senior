@@ -47,6 +47,7 @@
 <p class="caption"><span class="caption-text">Onion Omega Function</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Onion_Omega/Omega_Code.html">Code on Onion Omega</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings_text.html">How To Format Data for UART</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Examples</span></p>
 <ul class="current">
@@ -63,7 +64,6 @@
 <li class="toctree-l1"><a class="reference internal" href="shift_ex.html">Shift Register Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uart_ex.html">UART Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settings_handler.html">Setting Handler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="settings_text.html">How To Format Data for UART</a></li>
 <li class="toctree-l1"><a class="reference internal" href="in_pid_out.html">Putting It All Together</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API References</span></p>
@@ -105,10 +105,10 @@
 <h1>LTC2984 Object Usage<a class="headerlink" href="#ltc2984-object-usage" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ltc2984-object-purpose">
 <h2>LTC2984 Object Purpose<a class="headerlink" href="#ltc2984-object-purpose" title="Permalink to this headline">¶</a></h2>
-<p>This objects purpose exists to provide a simple interface to the LTC2984. There are many different functions of the LTC2984, but for this class, we focus on it’s ability to measure thermocouples and RTD’s.</p>
+<p>This object exists to provide a simple interface to the LTC2984. There are many different functions of the LTC2984, but for this class, we focus on it’s ability to measure thermocouples and RTD’s.</p>
 <div class="section" id="code-examples">
 <h3>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h3>
-<p>The first examples shows how to initialize the object. The user must provide a Chip Select (<span class="math notranslate nohighlight">\(\bar{CS}\)</span>) pin, and the common pins for SPI communication (MISO, MOSI, SCK). There is an optional interrupt pin, and for the purposes of this object, it is used.</p>
+<p>The first examples shows how to initialize the object. The user must provide a Chip Select (<span class="math notranslate nohighlight">\(\overline{CS}\)</span>) pin, and the common pins for SPI communication (MISO, MOSI, SCK). There is an optional interrupt pin, and for the purposes of this object, it is used.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Example initilization of object</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">board</span>

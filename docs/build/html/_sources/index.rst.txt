@@ -39,6 +39,13 @@ The Teensy is the heart of the board. It controls all of the I/O as well as the 
 
 The Teensy 4.1 is capable of 600MHz, as well as being programmable through Circuit Python which was used almost exclusively. 
 
+Besides this, the Teensy 4.1 has a plethora of I/O available that was crucial to the project. Below is an image of the available I/O and a link to `PJRC <https://www.pjrc.com/store/teensy41.html>`_ for more information.
+
+.. image:: images/teensy_side.jpg
+   :scale: 50 %
+   :alt: Teensy Pins
+   :align: center
+
 
 
 
@@ -47,13 +54,18 @@ Function of Onion Omega
 
 This link provide information relative to the Onion Omega Controller. The Onion Omega is used as a data aggregate and can act as a wifi hotspot capable of allowing wireless access to the controller functionality. 
 
+The Omega was used because it runs an OS in the form of Linux, specifically a distribution called OpenWRT. This was necessary to utilize libraries that can access PLC's, specifically the `pycomm3 library <https://docs.pycomm3.dev/en/latest/>`_ which was used to communicate with the PLC for testing purposes. There are other libraries capable of handling the same functionality, but the pycomm3 library was very simple to use. 
+
+It is also capable of hosting a webpage, which with more work could simplify the users ability to adjust settings. For now, settings are adjusted by connecting to the Omega through the terminal. 
+
+
 .. toctree::
    :maxdepth: 1
    :glob:
    :caption: Onion Omega Function
 
    Onion_Omega/*
-
+   API_Examples/settings_text
 
 
 .. toctree::
@@ -68,7 +80,6 @@ This link provide information relative to the Onion Omega Controller. The Onion 
    API_Examples/shift_ex
    API_Examples/uart_ex
    API_Examples/settings_handler
-   API_Examples/settings_text
    API_Examples/in_pid_out
 
 

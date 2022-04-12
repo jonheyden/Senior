@@ -2,6 +2,11 @@
 
 class uart_container:
    def __init__(self, uart_) -> None:
+      """__init__ Initializes the uart container
+
+      :param uart_: Uart object
+      :type uart_: busio.UART
+      """      
       
       self.uartob = uart_
       #PID [kp, ki, kd, min_output, max_output, min_input, max_input, sample_time, setpoint, mode, enable]
@@ -68,6 +73,8 @@ class uart_container:
       self.__mode = 0
 
    def check_buffer(self):
+      """check_buffer Used to check the buffer for data and update accordingly.
+      """      
       if self.uartob.in_waiting > 0:
          x = self.uartob.readline()
          x = x.decode('utf-8').strip().split(',')
@@ -110,6 +117,11 @@ class uart_container:
 
    
    def get_decode(self):
+      """get_decode Helper function to decode the data from the buffer.
+
+      :return: Decoded data
+      :rtype: str
+      """      
       data = self.uartob.readline()
       data = data.decode('utf-8').strip()
       data = data.split(',')

@@ -17,7 +17,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Input Object Usage" href="../API_Examples/input_ex.html" />
+    <link rel="next" title="How To Format Data for UART" href="../API_Examples/settings_text.html" />
     <link rel="prev" title="Relay and Digital Out Circuits" href="../schematics/relaycircuit.html" /> 
 </head>
 
@@ -46,7 +46,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Onion Omega Function</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code on Onion Omega</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code on Onion Omega</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-structures">Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Examples/settings_text.html">How To Format Data for UART</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Examples</span></p>
 <ul>
@@ -57,7 +61,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../API_Examples/shift_ex.html">Shift Register Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../API_Examples/uart_ex.html">UART Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../API_Examples/settings_handler.html">Setting Handler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API_Examples/settings_text.html">How To Format Data for UART</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../API_Examples/in_pid_out.html">Putting It All Together</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API References</span></p>
@@ -97,11 +100,20 @@
              
   <div class="section" id="code-on-onion-omega">
 <h1>Code on Onion Omega<a class="headerlink" href="#code-on-onion-omega" title="Permalink to this headline">¶</a></h1>
-<p>There are two main programs that can be run on the Onion Omega. The first is a simple python script that will send the information located in the settings.txt file.</p>
-<p>The configuration information can be found in the “How to Format Data for UART” section under “API Examples.”</p>
-<p>The other program is for CIP control through the ethernet port avaialble on the board. This program will create a CIP link to the targetted controller and start to read/write values based on the values of the PLC.</p>
-<p>This is possible by leveraging the pycomm3 library by ottowayi. The Onion is capable of both python 2 and python 3. In order to use this library, the user must call python3 on the command line.</p>
-<p>The code on available through github is using a dummy IP, the address will need to be configured by the user. Further, the tags will need to be made available in the PLC by the user, either through an AOI or manually. The program will fail if it can not find the tags at the address expected.</p>
+<p>There are two main programs that can be run on the Onion Omega. The first is a simple python script that will send the information located in the settings.txt file. This can be found with the name <a class="reference external" href="https://github.com/jonheyden/Senior/blob/main/Onion/comm.py">comm.py</a> on the repository.</p>
+<p>The configuration information can be found in the “How to Format Data for UART” section.</p>
+<p>The other program is for CIP control through the ethernet port avaialble on the board. This program will create a CIP link to the targetted controller and start to read/write values based on the values of the PLC. The code can be found with the name <a class="reference external" href="https://github.com/jonheyden/Senior/blob/main/Onion/main_onion.py">main_onion.py</a> on the repository.</p>
+<p>This is possible by leveraging the <a class="reference external" href="https://docs.pycomm3.dev/en/latest/">pycomm3 library</a> by ottowayi. The Onion is capable of both python 2 and python 3. In order to use this library, the user must call python3 on the command line. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 main_onion.py
+</pre></div>
+</div>
+<p>The code can be made to run as a background process by adding &amp; to the end of the command. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 main_onion.py <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>This can further be automated by making the program run on boot. For the purpose of this document, we will not cover that but the information can be found at the Onion Omega example site under <a class="reference external" href="https://docs.onion.io/omega2-docs/running-a-command-on-boot.html">running a command on boot</a>.</p>
+<p>The code available through github is using a dummy IP, the address will need to be configured by the user. Further, the tags will need to be made available in the PLC by the user, either through an AOI or manually. The program will fail if it can not find the tags at the address expected.</p>
+<p>Because of licensing, the PLC code is not included but the structures for the tags can be found <a class="reference internal" href="#data-structures"><span class="std std-ref">below</span></a>.</p>
 <p>The first code block is an example of generating the tag names in an array for accessing multiple tags at once.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Generating Tag Names</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
@@ -408,7 +420,9 @@
 </pre></div>
 </div>
 </div>
-<p>Below are some examples of how to create structures to send to the PLC, which have to match the structure of the PLC.</p>
+<div class="section" id="data-structures">
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h2>
+<p>Below are some examples of how to create structures to send to the PLC, which have to match the structure of the PLC. The user can use these to make</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">Structure Examples</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_struct</span><span class="p">(</span><span class="n">inputnum</span><span class="p">,</span><span class="n">mode</span><span class="p">,</span> <span class="n">enghigh</span><span class="p">,</span> <span class="n">englow</span><span class="p">):</span>
@@ -510,13 +524,14 @@
 </div>
 </div>
 </div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../schematics/relaycircuit.html" class="btn btn-neutral float-left" title="Relay and Digital Out Circuits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../API_Examples/input_ex.html" class="btn btn-neutral float-right" title="Input Object Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../API_Examples/settings_text.html" class="btn btn-neutral float-right" title="How To Format Data for UART" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

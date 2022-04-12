@@ -4,14 +4,14 @@ LTC2984 Object Usage
 LTC2984 Object Purpose
 -----------------------
 
-This objects purpose exists to provide a simple interface to the LTC2984. There are many different functions of the LTC2984, but for this class, we focus on it's ability to measure thermocouples and RTD's. 
+This object exists to provide a simple interface to the LTC2984. There are many different functions of the LTC2984, but for this class, we focus on it's ability to measure thermocouples and RTD's. 
 
 
 
 Code Examples
 +++++++++++++
 
-The first examples shows how to initialize the object. The user must provide a Chip Select (:math:`\bar{CS}`) pin, and the common pins for SPI communication (MISO, MOSI, SCK). There is an optional interrupt pin, and for the purposes of this object, it is used.  
+The first examples shows how to initialize the object. The user must provide a Chip Select (:math:`\overline{CS}`) pin, and the common pins for SPI communication (MISO, MOSI, SCK). There is an optional interrupt pin, and for the purposes of this object, it is used.  
 
 .. code-block:: python
    :caption: Example initilization of object

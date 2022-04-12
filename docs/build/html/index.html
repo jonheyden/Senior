@@ -14,6 +14,17 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -46,6 +57,7 @@
 <p class="caption"><span class="caption-text">Onion Omega Function</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Onion_Omega/Omega_Code.html">Code on Onion Omega</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_text.html">How To Format Data for UART</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Examples</span></p>
 <ul>
@@ -56,7 +68,6 @@
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/shift_ex.html">Shift Register Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/uart_ex.html">UART Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_handler.html">Setting Handler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_text.html">How To Format Data for UART</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/in_pid_out.html">Putting It All Together</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API References</span></p>
@@ -119,14 +130,19 @@
 <h2>Function of the Teensy<a class="headerlink" href="#function-of-the-teensy" title="Permalink to this headline">¶</a></h2>
 <p>The Teensy is the heart of the board. It controls all of the I/O as well as the PID calculations. It also handles the SPI communication to the LTC2984, and communicates through UART with the Onion Omega.</p>
 <p>The Teensy 4.1 is capable of 600MHz, as well as being programmable through Circuit Python which was used almost exclusively.</p>
+<p>Besides this, the Teensy 4.1 has a plethora of I/O available that was crucial to the project. Below is an image of the available I/O and a link to <a class="reference external" href="https://www.pjrc.com/store/teensy41.html">PJRC</a> for more information.</p>
+<a class="reference internal image-reference" href="_images/teensy_side.jpg"><img alt="Teensy Pins" class="align-center" src="_images/teensy_side.jpg" style="width: 900.0px; height: 637.5px;" /></a>
 </div>
 <div class="section" id="function-of-onion-omega">
 <h2>Function of Onion Omega<a class="headerlink" href="#function-of-onion-omega" title="Permalink to this headline">¶</a></h2>
 <p>This link provide information relative to the Onion Omega Controller. The Onion Omega is used as a data aggregate and can act as a wifi hotspot capable of allowing wireless access to the controller functionality.</p>
+<p>The Omega was used because it runs an OS in the form of Linux, specifically a distribution called OpenWRT. This was necessary to utilize libraries that can access PLC’s, specifically the <a class="reference external" href="https://docs.pycomm3.dev/en/latest/">pycomm3 library</a> which was used to communicate with the PLC for testing purposes. There are other libraries capable of handling the same functionality, but the pycomm3 library was very simple to use.</p>
+<p>It is also capable of hosting a webpage, which with more work could simplify the users ability to adjust settings. For now, settings are adjusted by connecting to the Omega through the terminal.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Onion Omega Function</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Onion_Omega/Omega_Code.html">Code on Onion Omega</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_text.html">How To Format Data for UART</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -139,7 +155,6 @@
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/shift_ex.html">Shift Register Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/uart_ex.html">UART Object Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_handler.html">Setting Handler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API_Examples/settings_text.html">How To Format Data for UART</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API_Examples/in_pid_out.html">Putting It All Together</a></li>
 </ul>
 </div>

@@ -1,12 +1,12 @@
 How To Format Data for UART
-===========================
+============================
 
 The data needs to be written to a simple txt file, but the formatting is critical to get expected results. 
 
 The order that the data is sent is less critical, so long as all of the data is sent with it's corresponding header. 
 
 
-Format for Data:
+Format for Data
 ----------------
 
 
