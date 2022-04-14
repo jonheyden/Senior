@@ -15,36 +15,32 @@ This project was concieved because of the high cost associated with industrial a
 
 This project demonstrates how to build circuits that can interface with multiple types of industrial signals while using minimal hardware. These signals include:
 
+
 * Inputs
 
   * 4-20mA
-
   * 0-10VDC
-
   * 0-5VDC
-
   * Digital I.E. (0 or 24VDC)
+
 
 * Outputs
 
   * 4-20mA
-
   * 0-10VDC
-
   * 0-5VDC
-
   * Digital I.E. (0 or 24VDC)
+
 
 * Relay
 
   * 24VDC up to 500mA
-
   * 120VAC with different relays EX `AQY217GSX <https://www.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AQY217GSX?qs=T3oQrply3y8zWlBPtBcCgw%3D%3D>`_
+
 
 * Temperature Instruments (TI)
 
   * Thermocouples (Type J, Type K, Type E, Type N, Type R, Type S, Type T, Type B)
-  
   * RTD's (2-wire, 3-wire, 4-wire)
 
 This project demonstrates how to use the API created for this project in a general way so as to apply it to any project, using CircuitPython as a base. The microcontroller picked for this purpose was the Teensy 4.1.
