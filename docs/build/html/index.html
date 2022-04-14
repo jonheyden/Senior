@@ -230,6 +230,11 @@
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -317,22 +322,34 @@
 <p>This project was concieved because of the high cost associated with industrial automation systems. Oftentimes, users at the Technician level just desire more fine control, generally in the form of analog I/O. The high cost of the analog I/O is not always justified, even if it would make the process run better. The primary objective of this project is to provide a simple solution that a technician could put together to give them more control of the process without breaking the bank.</p>
 <p>This project demonstrates how to build circuits that can interface with multiple types of industrial signals while using minimal hardware. These signals include:</p>
 <ul class="simple">
-<li><p>Inputs
-* 4-20mA
-* 0-10VDC
-* 0-5VDC
-* Digital I.E. (0 or 24VDC)</p></li>
-<li><p>Outputs
-* 4-20mA
-* 0-10VDC
-* 0-5VDC
-* Digital I.E. (0 or 24VDC)</p></li>
-<li><p>Relay
-* 24VDC up to 500mA
-* 120VAC with different relays EX <a class="reference external" href="https://www.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AQY217GSX?qs=T3oQrply3y8zWlBPtBcCgw%3D%3D">AQY217GSX</a></p></li>
-<li><p>Temperature Instruments (TI)
-* Thermocouples (Type J, Type K, Type E, Type N, Type R, Type S, Type T, Type B)
-* RTD’s (2-wire, 3-wire, 4-wire)</p></li>
+<li><p>Inputs</p>
+<ul>
+<li><p>4-20mA</p></li>
+<li><p>0-10VDC</p></li>
+<li><p>0-5VDC</p></li>
+<li><p>Digital I.E. (0 or 24VDC)</p></li>
+</ul>
+</li>
+<li><p>Outputs</p>
+<ul>
+<li><p>4-20mA</p></li>
+<li><p>0-10VDC</p></li>
+<li><p>0-5VDC</p></li>
+<li><p>Digital I.E. (0 or 24VDC)</p></li>
+</ul>
+</li>
+<li><p>Relay</p>
+<ul>
+<li><p>24VDC up to 500mA</p></li>
+<li><p>120VAC with different relays EX <a class="reference external" href="https://www.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AQY217GSX?qs=T3oQrply3y8zWlBPtBcCgw%3D%3D">AQY217GSX</a></p></li>
+</ul>
+</li>
+<li><p>Temperature Instruments (TI)</p>
+<ul>
+<li><p>Thermocouples (Type J, Type K, Type E, Type N, Type R, Type S, Type T, Type B)</p></li>
+<li><p>RTD’s (2-wire, 3-wire, 4-wire)</p></li>
+</ul>
+</li>
 </ul>
 <p>This project demonstrates how to use the API created for this project in a general way so as to apply it to any project, using CircuitPython as a base. The microcontroller picked for this purpose was the Teensy 4.1.</p>
 <p>Further, the project demonstrates how to use a library called <a class="reference external" href="https://docs.pycomm3.dev/en/latest/">pycomm3 library</a> that allows the user to interface with CIP based protocol devices over ethernet. This library requires an OS to use, which is satisfied by the Onion Omega.</p>
