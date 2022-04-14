@@ -71,7 +71,7 @@ Parts
 
 :download:`PDZ3.3 Overvoltage Diode <../datasheets/Input/PDZ3.3.pdf>`
 
-:download:`1/4 Watt 499 Ohm Resistor <../datasheets/Input/499OHM.pdf>`
+:download:`1/4 Watt 499 Ohm Resistor <../datasheets/Input/499Ohm.pdf>`
 
 .. image:: ../images/input_cir.jpg
    :width: 500
