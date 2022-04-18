@@ -11,7 +11,7 @@ Loop Controller and Remote I/O
 The Project Overview
 +++++++++++++++++++++
 
-This project was concieved because of the high cost associated with industrial automation systems. Oftentimes, users at the Technician level just desire more fine control, generally in the form of analog I/O. The high cost of the analog I/O is not always justified, even if it would make the process run better. The primary objective of this project is to provide a simple solution that a technician could put together to give them more control of the process without breaking the bank. 
+This project was concieved because of the high cost associated with industrial automation systems. Oftentimes, users at the Technician level desire more fine control of a process, generally in the form of analog I/O. The high cost of the analog I/O is not always justified, even if it would make the process run better or simplify troubleshooting. The primary objective of this project is to provide a simple solution that a technician could put together to give them more control of the process without breaking the bank. 
 
 This project demonstrates how to build circuits that can interface with multiple types of industrial signals while using minimal hardware. These signals include:
 
