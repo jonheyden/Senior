@@ -9,9 +9,9 @@ The purpose of the shift object is to allow for easy shifting of data into up to
 Code Examples
 +++++++++++++
 
-The first examples shows how to initialize the object. The user must provide the inputs for the Storage Register Clock (RCLK), Output Enable (:math:`\bar{OE}`), Shift Register Clock (SRCLK), Serial Data Input (SER), and the number of outputs (8 or 16).
+The first examples shows how to initialize the object. The user must provide the inputs for the Storage Register Clock (RCLK), Output Enable (:math:`\overline{OE}`), Shift Register Clock (SRCLK), Serial Data Input (SER), and the number of outputs (8 or 16).
 
-The overriding clear (:math:`\bar{SRCLR}`) pin is assumed to be connected to VCC. 
+The overriding clear (:math:`\overline{SRCLR}`) pin is assumed to be connected to VCC. 
 
 .. code-block:: python
    :caption: Example initilization of object
@@ -38,7 +38,7 @@ The overriding clear (:math:`\bar{SRCLR}`) pin is assumed to be connected to VCC
    # Initialize the input object
    digital_shiftreg = shift_object.shiftregister(digital_store, digital_enable, digital_shift, digital_data, 8)
 
-The shift register must be enabled through the input_container.enable() function. This function will set the :math:`\bar{OE}` pin to low.
+The shift register must be enabled through the input_container.enable() function. This function will set the :math:`\overline{OE}` pin to low.
 
 .. code-block:: python
    :caption: Using the declared object from above.
