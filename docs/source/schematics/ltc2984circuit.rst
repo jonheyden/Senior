@@ -27,7 +27,7 @@ A cold junction reference was created with a simple 2N3904 BJT that ties it's ba
 Parts
 ------
 
-Resistors R12-R31 are all 100:math:`\Omega` resistors used to protect the channel.
+Resistors R12-R31 are all :math:`100{\Omega}` resistors used to protect the channel.
 Capacitors C1-C16 are 0.01uF. 
 Capacitors C17-C32 are 100pF
 
