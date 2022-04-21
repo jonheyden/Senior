@@ -14,6 +14,13 @@ The resistor selected was :math:`3.3k{\Omega}` and the capcitor selected was 4.7
 ---------------------------
 The scaled value from the Non-Inverting Amplifier is connected to a relay with the attached VoltageMode tag. When turned on, it will directly pass a 0-10VDC signal or 0-5VDC signal directly off of the amplifier.
 
+An image of the path of the current can be seen below: 
+
+.. image:: ../images/output_voltage_mode.jpg
+   :width: 500
+   :alt: Input Circuit
+   :align: center
+
 4-20mA Operation
 -----------------
 When operating in 4-20mA mode, both a relay and a dual package NPN/PNP BJT transistor are turned on. The dual package BJT acts simply as a switch that controls the input path to the positive terminal for the 4-20mA amplifier.
@@ -28,6 +35,13 @@ The output signal then comes back to the Current_Return tag, which gets sunk thr
 With the voltage now scaled between 0-5VDC, the amplifier will try to adjust the output voltage to match the input voltage, which will force the voltage at the negative terminal to be the same as the positive terminal. 
 
 If the voltage at the negative terminal is the scaled 5VDC, then the current through the :math:`250{\Omega}` resistor will be :math:`\frac{5}{250} = 20mA`. This means that an input of 1VDC will result in a 4mA output. 
+
+An image of the path of the current can be seen below: 
+
+.. image:: ../images/output_current_mode.jpg
+   :width: 500
+   :alt: Input Circuit
+   :align: center
 
 Parts
 -----
