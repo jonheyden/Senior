@@ -17,6 +17,12 @@ The configuration for the amplifiers is essentially an instrumentation amplifier
    These amplifiers are capable of ground sensing which is paramount 
    if only connected to 24VDC and 0V. 
 
+An image of the path of the current can be seen below: 
+
+.. image:: ../images/input_voltage_mode.jpg
+   :width: 500
+   :alt: Input Circuit
+   :align: center
 
 Current Sensing Mode
 ---------------------
@@ -31,6 +37,14 @@ At 4mA, the voltage difference will be ~2VDC.
 .. note:: 
    499 Ohms was selected because of the internal resistance of 
    the SSR and possible offsets. The ideal value is 500 Ohms from U4A to U4B.
+
+
+An image of the path of the current can be seen below: 
+
+.. image:: ../images/input_current_mode.jpg
+   :width: 500
+   :alt: Input Circuit
+   :align: center
 
 
 Instrumentation Amplifier
