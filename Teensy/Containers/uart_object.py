@@ -1,5 +1,3 @@
-
-
 class uart_container:
    def __init__(self, uart_) -> None:
       """__init__ Initializes the uart container
